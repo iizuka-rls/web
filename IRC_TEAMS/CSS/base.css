@@ -1,0 +1,134 @@
+@charset "utf-8";
+
+body {
+	background-color: #F0ECCD;
+	/*background-image:url(../WEB_rayout_image/1.png);*/
+	background-repeat:repeat-x;
+	margin:5px;
+	padding:0px;
+	font-family:"ＭＳ Ｐゴシック", "MS PGothic", sans-serif
+	margin-left:auto;
+	margin-right:auto;	
+}
+
+
+div {
+	margin:auto;
+	padding:0px;
+	font-family:verdana,"ＭＳ Ｐゴシック", "MS PGothic", sans-serif; 
+	font-size:12px;
+}
+.AbsWrap {
+	width: 100%;
+	position: relative;
+}
+.rowWrap {
+	width: 100%;
+}
+.clearfloat {
+	clear:both;
+	height:0px;
+}
+a:link, a:visited{
+	color:#000;
+	text-decoration:none;
+	/*COLOR:inherit;*/
+	/*text-decoration:inherit;*/
+}
+
+a:link{
+	color:#000;
+	
+	}
+
+#main {
+
+	width:910px;
+	/*margin: 0px auto 0px 0px;*/
+	border: 0px solid #f0f0f0;
+	margin:auto;
+}
+
+#content{
+	
+	margin-left:auto;
+	margin-right:auto;
+	
+}
+
+.img{
+	margin-top:35px;
+	margin-bottom:35px;
+	margin-left:5px;
+}
+
+#team_content{
+	width:806px;
+	height:1200px;
+	
+}
+
+.teams{
+	height:300px;
+	width:100%;
+	
+}
+
+#name{
+	height:16px;
+	width:auto;
+	float:left;
+	/*background-color:#999;*/
+	border-bottom:solid;
+	border-bottom-color:#999;
+	font-family:Georgia, "Times New Roman", Times, serif;	
+	
+}
+
+.name_wrap{
+	width:806px;
+	height:16px;
+	/*background-color:#CCC;*/
+	float:left;
+}
+
+.team_content{
+	height:100%;
+	width:100%;
+	
+}
+	
+.member{
+	width:170px;
+	height:260px;
+	margin:12px;
+	float:left;
+	font-family:Georgia, "Times New Roman", Times, serif;
+	/*font-family:"ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, Osaka, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;*/
+	/*border:solid 1px;*/
+	font-size:14px;
+}
+
+.photo{
+	width:294px;
+	margin-top:12px;
+	margin-bottom:12px;
+	margin-right:12px;
+	height:260px;
+	/*background-color:#F66;*/
+	float:left;
+	
+}
+
+.down_load{
+		height:16px;
+	width:auto;
+	float:left;
+	/*background-color:#999;*/
+	font-size:14px;
+	font-family:Georgia, "Times New Roman", Times, serif;
+}
+
+a:hover{
+	color:#F60;
+}

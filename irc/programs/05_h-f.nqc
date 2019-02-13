@@ -1,0 +1,1206 @@
+/*############################################################################*/
+/*define*/
+#define x1 6//coordinate
+#define y1 3//coordinate
+#define x2 1900//mm
+#define y2 200//mm
+
+#define THRESHOLD 45
+#define DISTANCE 105
+#define DISTANCE_X1 x1*200*55/100//count
+#define DISTANCE_Y1 y1*200*55/100//count
+#define mm_count_x2 x2*55/100
+#define mm_count_y2 y2*55/100
+#define DISTANCE_X2 mm_count_x2-DISTANCE_X1
+#define DISTANCE_Y2 mm_count_y2-DISTANCE_Y1
+#define distance (SENSOR_1+SENSOR_3)/2
+
+#define TURN_COUNT_1 60
+
+/*############################################################################*/
+
+/*############################################################################*/
+/*main*/
+int turn,arm,i,c;
+task main()
+{
+/*############################################################################*/
+/*setting*/
+   CreateDatalog(1);
+   Timer(1);
+   ClearTimer(1);
+   
+   SetSensor(SENSOR_2,SENSOR_LIGHT);
+
+   SetSensor(SENSOR_1,SENSOR_ROTATION);
+   ClearSensor(SENSOR_1);
+   SetSensor(SENSOR_3,SENSOR_ROTATION);
+   ClearSensor(SENSOR_3);
+
+   SetPower(OUT_A,5);
+   SetPower(OUT_C,5);
+
+   SetPower(OUT_B,5);
+/*############################################################################*/
+
+/*############################################################################*/
+/*y1=0*/
+   if(y1==0){
+   
+      Turn_right();
+
+/*############################################################################*/
+/*x1=1*/
+      if(x1==1){
+         ClearSensor(SENSOR_1);
+         ClearSensor(SENSOR_3);
+         OnFwd(OUT_A + OUT_C);
+         repeat(100){
+            if(SENSOR_2 > THRESHOLD){
+               OnFwd(OUT_A);
+               OnRev(OUT_C);
+            }else{
+               OnRev(OUT_A);
+               OnFwd(OUT_C);
+            }
+         }
+         do{
+            OnFwd(OUT_A+OUT_C);   
+         }while(distance < DISTANCE_X1-45);
+         Off(OUT_A + OUT_C);
+
+/*############################################################################*/
+
+         arm_up();
+
+/*############################################################################*/
+/*if_x2,y2*/
+         if(DISTANCE_X2==0&&DISTANCE_Y2==0){
+
+            Off(OUT_A+OUT_C);
+
+         }else if(DISTANCE_Y2==0){
+            if(DISTANCE_X2>0){
+               ClearSensor(SENSOR_1);
+               ClearSensor(SENSOR_3);
+               OnFwd(OUT_A + OUT_C);
+               do{
+                  if(SENSOR_2 > THRESHOLD){
+                     OnFwd(OUT_A);
+                     Float(OUT_C);
+                  }else{
+                     Float(OUT_A);
+                     OnFwd(OUT_C);
+                  }
+               }while(distance < DISTANCE_X2+30);
+               Off(OUT_A + OUT_C);
+            }else if(DISTANCE_X2<0){
+               ClearSensor(SENSOR_1);
+               ClearSensor(SENSOR_3);
+               do{
+                  OnFwd(OUT_A+OUT_C);
+               }while(distance<70);
+               repeat(2){
+                  Turn_right();
+               }
+               ClearSensor(SENSOR_1);
+               ClearSensor(SENSOR_3);
+               OnFwd(OUT_A + OUT_C);
+               do{
+                  if(SENSOR_2 > THRESHOLD){
+                     OnFwd(OUT_A);
+                     Float(OUT_C);
+                  }else{
+                     Float(OUT_A);
+                     OnFwd(OUT_C);
+                  }
+               }while(-distance > DISTANCE_X2);
+               Off(OUT_A + OUT_C);
+            }
+         }else if(DISTANCE_X2==0){
+            if(DISTANCE_Y2>0){
+               ClearSensor(SENSOR_1);
+               ClearSensor(SENSOR_3);
+               do{
+                  if(SENSOR_2 > THRESHOLD){
+                     OnFwd(OUT_A);
+                     Float(OUT_C);
+                  }else{
+                     Float(OUT_A);
+                     OnFwd(OUT_C);
+                  }
+               }while(distance < 60);
+               Turn_left();
+               ClearSensor(SENSOR_1);
+               ClearSensor(SENSOR_3);
+               OnFwd(OUT_A + OUT_C);
+               do{
+                  if(SENSOR_2 > THRESHOLD){
+                     OnFwd(OUT_A);
+                     Float(OUT_C);
+               }else{
+                     Float(OUT_A);
+                     OnFwd(OUT_C);
+                  }
+               }while(distance < DISTANCE_Y2);
+               Off(OUT_A + OUT_C);
+            }else if(DISTANCE_Y2<0){
+               ClearSensor(SENSOR_1);
+               ClearSensor(SENSOR_3);
+               do{
+                  if(SENSOR_2 > THRESHOLD){
+                     OnFwd(OUT_A);
+                     Float(OUT_C);
+                  }else{
+                     Float(OUT_A);
+                     OnFwd(OUT_C);
+                  }
+               }while(distance < 70);
+               Turn_right();
+               ClearSensor(SENSOR_1);
+               ClearSensor(SENSOR_3);
+               OnFwd(OUT_A + OUT_C);
+               do{
+                  if(SENSOR_2 > THRESHOLD){
+                     OnFwd(OUT_A);
+                     Float(OUT_C);
+               }else{
+                     Float(OUT_A);
+                     OnFwd(OUT_C);
+                  }
+               }while(-distance > DISTANCE_Y2);
+               Off(OUT_A + OUT_C);
+            }
+         }else if(DISTANCE_X2>0){
+            if(DISTANCE_Y2>0){
+               ClearSensor(SENSOR_1);
+               ClearSensor(SENSOR_3);
+               OnFwd(OUT_A + OUT_C);
+               do{
+                  if(SENSOR_2 > THRESHOLD){
+                     OnFwd(OUT_A);
+                     Off(OUT_C);
+                  }else{
+                     Off(OUT_A);
+                     OnFwd(OUT_C);
+                  }
+               }while(distance < DISTANCE_X2+90);
+               Off(OUT_A + OUT_C);
+               Turn_left();
+               ClearSensor(SENSOR_1);
+               ClearSensor(SENSOR_3);
+               OnFwd(OUT_A + OUT_C);
+               do{
+                  if(SENSOR_2 > THRESHOLD){
+                     OnFwd(OUT_A);
+                     Float(OUT_C);
+               }else{
+                     Float(OUT_A);
+                     OnFwd(OUT_C);
+                  }
+               }while(distance < DISTANCE_Y2);
+               Off(OUT_A + OUT_C);
+            }else{
+               ClearSensor(SENSOR_1);
+               ClearSensor(SENSOR_3);
+               OnFwd(OUT_A + OUT_C);
+               do{
+                  if(SENSOR_2 > THRESHOLD){
+                     OnFwd(OUT_A);
+                     Float(OUT_C);
+                  }else{
+                     Float(OUT_A);
+                     OnFwd(OUT_C);
+                  }
+               }while(distance < DISTANCE_X2+90);
+               Off(OUT_A + OUT_C);
+               Turn_right();
+               ClearSensor(SENSOR_1);
+               ClearSensor(SENSOR_3);
+               OnFwd(OUT_A + OUT_C);
+               do{
+                  if(SENSOR_2 > THRESHOLD){
+                     OnFwd(OUT_A);
+                     Float(OUT_C);
+               }else{
+                     Float(OUT_A);
+                     OnFwd(OUT_C);
+                  }
+               }while(-distance > DISTANCE_Y2);
+               Off(OUT_A + OUT_C);
+            }
+         }else if(DISTANCE_X2<0){
+            if(DISTANCE_Y2>0){
+               ClearSensor(SENSOR_1);
+               ClearSensor(SENSOR_3);
+               do{
+                  OnFwd(OUT_A+OUT_C);
+               }while(distance<70);
+               Turn_left();
+               ClearSensor(SENSOR_1);
+               ClearSensor(SENSOR_3);
+               OnFwd(OUT_A + OUT_C);
+               do{
+                  if(SENSOR_2 > THRESHOLD){
+                     OnFwd(OUT_A);
+                     Float(OUT_C);
+               }else{
+                     Float(OUT_A);
+                     OnFwd(OUT_C);
+                  }
+               }while(distance < DISTANCE_Y2+30);
+               Off(OUT_A + OUT_C);
+               Turn_left();
+               ClearSensor(SENSOR_1);
+               ClearSensor(SENSOR_3);
+               OnFwd(OUT_A + OUT_C);
+               do{
+                  if(SENSOR_2 > THRESHOLD){
+                     OnFwd(OUT_A);
+                     Float(OUT_C);
+                  }else{
+                     Float(OUT_A);
+                     OnFwd(OUT_C);
+                  }
+               }while(-distance > DISTANCE_X2);
+               Off(OUT_A + OUT_C);
+            }else{
+               ClearSensor(SENSOR_1);
+               ClearSensor(SENSOR_3);
+               do{
+                  OnFwd(OUT_A+OUT_C);
+               }while(distance<70);
+               Turn_right();
+               ClearSensor(SENSOR_1);
+               ClearSensor(SENSOR_3);
+               OnFwd(OUT_A + OUT_C);
+               do{
+                  if(SENSOR_2 > THRESHOLD){
+                     OnFwd(OUT_A);
+                     Float(OUT_C);
+               }else{
+                     Float(OUT_A);
+                     OnFwd(OUT_C);
+                  }
+               }while(-distance > DISTANCE_Y2-15);
+               Off(OUT_A + OUT_C);
+               Turn_right();
+               ClearSensor(SENSOR_1);
+               ClearSensor(SENSOR_3);
+               OnFwd(OUT_A + OUT_C);
+               do{
+                  if(SENSOR_2 > THRESHOLD){
+                     OnFwd(OUT_A);
+                     Float(OUT_C);
+                  }else{
+                     Float(OUT_A);
+                     OnFwd(OUT_C);
+                  }
+               }while(-distance > DISTANCE_X2);
+               Off(OUT_A + OUT_C);
+            }
+         }
+         
+/*############################################################################*/
+
+         if(DISTANCE_X2==0&&DISTANCE_Y2==0){
+            Off(OUT_A+OUT_C);
+         }else{
+            ClearSensor(SENSOR_1);
+            ClearSensor(SENSOR_3);
+            do{
+               OnRev(OUT_A+OUT_C);
+            }while(distance>-60);
+         }
+
+         Off(OUT_A+OUT_C);
+
+         arm_down();
+         
+         PlaySound(1);//finish
+
+/*############################################################################*/
+/*xnot=1*/
+      }else{
+         ClearSensor(SENSOR_1);
+         ClearSensor(SENSOR_3);
+         OnFwd(OUT_A + OUT_C);
+         do{
+            if(SENSOR_2 > THRESHOLD){
+               OnFwd(OUT_A);
+               Off(OUT_C);
+            }else{
+               Off(OUT_A);
+               OnFwd(OUT_C);
+            }
+         }while(distance < DISTANCE_X1-45);
+         Off(OUT_A + OUT_C);
+
+         arm_up();
+
+/*############################################################################*/
+/*ifx2,y2*/
+         if(DISTANCE_X2==0&&DISTANCE_Y2==0){
+
+            Off(OUT_A+OUT_C);
+
+         }else if(DISTANCE_Y2==0){
+            if(DISTANCE_X2>0){
+               ClearSensor(SENSOR_1);
+               ClearSensor(SENSOR_3);
+               OnFwd(OUT_A + OUT_C);
+               do{
+                  if(SENSOR_2 > THRESHOLD){
+                     OnFwd(OUT_A);
+                     Float(OUT_C);
+                  }else{
+                     Float(OUT_A);
+                     OnFwd(OUT_C);
+                  }
+               }while(distance < DISTANCE_X2+30);
+               Off(OUT_A + OUT_C);
+            }else if(DISTANCE_X2<0){
+               ClearSensor(SENSOR_1);
+               ClearSensor(SENSOR_3);
+               do{
+                  OnFwd(OUT_A+OUT_C);
+               }while(distance<70);
+               repeat(2){
+                  Turn_right();
+               }
+               ClearSensor(SENSOR_1);
+               ClearSensor(SENSOR_3);
+               OnFwd(OUT_A + OUT_C);
+               do{
+                  if(SENSOR_2 > THRESHOLD){
+                     OnFwd(OUT_A);
+                     Float(OUT_C);
+                  }else{
+                     Float(OUT_A);
+                     OnFwd(OUT_C);
+                  }
+               }while(-distance > DISTANCE_X2);
+               Off(OUT_A + OUT_C);
+            }
+         }else if(DISTANCE_X2==0){
+            if(DISTANCE_Y2>0){
+               ClearSensor(SENSOR_1);
+               ClearSensor(SENSOR_3);
+               do{
+                  if(SENSOR_2 > THRESHOLD){
+                     OnFwd(OUT_A);
+                     Float(OUT_C);
+                  }else{
+                     Float(OUT_A);
+                     OnFwd(OUT_C);
+                  }
+               }while(distance < 60);
+               Turn_left();
+               ClearSensor(SENSOR_1);
+               ClearSensor(SENSOR_3);
+               OnFwd(OUT_A + OUT_C);
+               do{
+                  if(SENSOR_2 > THRESHOLD){
+                     OnFwd(OUT_A);
+                     Float(OUT_C);
+               }else{
+                     Float(OUT_A);
+                     OnFwd(OUT_C);
+                  }
+               }while(distance < DISTANCE_Y2);
+               Off(OUT_A + OUT_C);
+            }else if(DISTANCE_Y2<0){
+               ClearSensor(SENSOR_1);
+               ClearSensor(SENSOR_3);
+               do{
+                  if(SENSOR_2 > THRESHOLD){
+                     OnFwd(OUT_A);
+                     Float(OUT_C);
+                  }else{
+                     Float(OUT_A);
+                     OnFwd(OUT_C);
+                  }
+               }while(distance < 70);
+               Turn_right();
+               ClearSensor(SENSOR_1);
+               ClearSensor(SENSOR_3);
+               OnFwd(OUT_A + OUT_C);
+               do{
+                  if(SENSOR_2 > THRESHOLD){
+                     OnFwd(OUT_A);
+                     Float(OUT_C);
+               }else{
+                     Float(OUT_A);
+                     OnFwd(OUT_C);
+                  }
+               }while(-distance > DISTANCE_Y2);
+               Off(OUT_A + OUT_C);
+            }
+         }else if(DISTANCE_X2>0){
+            if(DISTANCE_Y2>0){
+               ClearSensor(SENSOR_1);
+               ClearSensor(SENSOR_3);
+               OnFwd(OUT_A + OUT_C);
+               do{
+                  if(SENSOR_2 > THRESHOLD){
+                     OnFwd(OUT_A);
+                     Off(OUT_C);
+                  }else{
+                     Off(OUT_A);
+                     OnFwd(OUT_C);
+                  }
+               }while(distance < DISTANCE_X2+90);
+               Off(OUT_A + OUT_C);
+               Turn_left();
+               ClearSensor(SENSOR_1);
+               ClearSensor(SENSOR_3);
+               OnFwd(OUT_A + OUT_C);
+               do{
+                  if(SENSOR_2 > THRESHOLD){
+                     OnFwd(OUT_A);
+                     Float(OUT_C);
+               }else{
+                     Float(OUT_A);
+                     OnFwd(OUT_C);
+                  }
+               }while(distance < DISTANCE_Y2);
+               Off(OUT_A + OUT_C);
+            }else{
+               ClearSensor(SENSOR_1);
+               ClearSensor(SENSOR_3);
+               OnFwd(OUT_A + OUT_C);
+               do{
+                  if(SENSOR_2 > THRESHOLD){
+                     OnFwd(OUT_A);
+                     Float(OUT_C);
+                  }else{
+                     Float(OUT_A);
+                     OnFwd(OUT_C);
+                  }
+               }while(distance < DISTANCE_X2+90);
+               Off(OUT_A + OUT_C);
+               Turn_right();
+               ClearSensor(SENSOR_1);
+               ClearSensor(SENSOR_3);
+               OnFwd(OUT_A + OUT_C);
+               do{
+                  if(SENSOR_2 > THRESHOLD){
+                     OnFwd(OUT_A);
+                     Float(OUT_C);
+               }else{
+                     Float(OUT_A);
+                     OnFwd(OUT_C);
+                  }
+               }while(-distance > DISTANCE_Y2);
+               Off(OUT_A + OUT_C);
+            }
+         }else if(DISTANCE_X2<0){
+            if(DISTANCE_Y2>0){
+               ClearSensor(SENSOR_1);
+               ClearSensor(SENSOR_3);
+               do{
+                  OnFwd(OUT_A+OUT_C);
+               }while(distance<70);
+               Turn_left();
+               ClearSensor(SENSOR_1);
+               ClearSensor(SENSOR_3);
+               OnFwd(OUT_A + OUT_C);
+               do{
+                  if(SENSOR_2 > THRESHOLD){
+                     OnFwd(OUT_A);
+                     Float(OUT_C);
+               }else{
+                     Float(OUT_A);
+                     OnFwd(OUT_C);
+                  }
+               }while(distance < DISTANCE_Y2+30);
+               Off(OUT_A + OUT_C);
+               Turn_left();
+               ClearSensor(SENSOR_1);
+               ClearSensor(SENSOR_3);
+               OnFwd(OUT_A + OUT_C);
+               do{
+                  if(SENSOR_2 > THRESHOLD){
+                     OnFwd(OUT_A);
+                     Float(OUT_C);
+                  }else{
+                     Float(OUT_A);
+                     OnFwd(OUT_C);
+                  }
+               }while(-distance > DISTANCE_X2);
+               Off(OUT_A + OUT_C);
+            }else{
+               ClearSensor(SENSOR_1);
+               ClearSensor(SENSOR_3);
+               do{
+                  OnFwd(OUT_A+OUT_C);
+               }while(distance<70);
+               Turn_right();
+               ClearSensor(SENSOR_1);
+               ClearSensor(SENSOR_3);
+               OnFwd(OUT_A + OUT_C);
+               do{
+                  if(SENSOR_2 > THRESHOLD){
+                     OnFwd(OUT_A);
+                     Float(OUT_C);
+               }else{
+                     Float(OUT_A);
+                     OnFwd(OUT_C);
+                  }
+               }while(-distance > DISTANCE_Y2-15);
+               Off(OUT_A + OUT_C);
+               Turn_right();
+               ClearSensor(SENSOR_1);
+               ClearSensor(SENSOR_3);
+               OnFwd(OUT_A + OUT_C);
+               do{
+                  if(SENSOR_2 > THRESHOLD){
+                     OnFwd(OUT_A);
+                     Float(OUT_C);
+                  }else{
+                     Float(OUT_A);
+                     OnFwd(OUT_C);
+                  }
+               }while(-distance > DISTANCE_X2);
+               Off(OUT_A + OUT_C);
+            }
+         }
+         
+/*############################################################################*/
+
+         if(DISTANCE_X2==0&&DISTANCE_Y2==0){
+            Off(OUT_A+OUT_C);
+         }else{
+            ClearSensor(SENSOR_1);
+            ClearSensor(SENSOR_3);
+            do{
+               OnRev(OUT_A+OUT_C);
+            }while(distance>-60);
+         }
+
+         Off(OUT_A+OUT_C);
+
+         arm_down();
+
+         PlaySound(1);//finish
+      }
+
+/*############################################################################*/
+/*y1not=0*/
+
+   }else{
+      OnFwd(OUT_A + OUT_C);
+      do{
+         if(SENSOR_2 > THRESHOLD){
+            OnFwd(OUT_A);
+            Float(OUT_C);
+         }else{
+            Float(OUT_A);
+            OnFwd(OUT_C);
+         }
+      }while(distance < DISTANCE_Y1);
+      Off(OUT_A + OUT_C);
+
+      Turn_right();
+
+/*############################################################################*/
+/*x1=1*/
+
+      if(x1==1){
+         ClearSensor(SENSOR_1);
+         ClearSensor(SENSOR_3);
+         OnFwd(OUT_A + OUT_C);
+         repeat(100){
+            if(SENSOR_2 > THRESHOLD){
+               OnFwd(OUT_A);
+               OnRev(OUT_C);
+            }else{
+               OnRev(OUT_A);
+               OnFwd(OUT_C);
+            }
+         }
+         do{
+            OnFwd(OUT_A+OUT_C);   
+         }while(distance < DISTANCE_X1-45);
+
+         Off(OUT_A + OUT_C);
+
+         arm_up();
+
+/*############################################################################*/
+/*ifx2,y2*/
+         if(DISTANCE_X2==0&&DISTANCE_Y2==0){
+
+            Off(OUT_A+OUT_C);
+
+         }else if(DISTANCE_Y2==0){
+            if(DISTANCE_X2>0){
+               ClearSensor(SENSOR_1);
+               ClearSensor(SENSOR_3);
+               OnFwd(OUT_A + OUT_C);
+               do{
+                  if(SENSOR_2 > THRESHOLD){
+                     OnFwd(OUT_A);
+                     Float(OUT_C);
+                  }else{
+                     Float(OUT_A);
+                     OnFwd(OUT_C);
+                  }
+               }while(distance < DISTANCE_X2+30);
+               Off(OUT_A + OUT_C);
+            }else if(DISTANCE_X2<0){
+               ClearSensor(SENSOR_1);
+               ClearSensor(SENSOR_3);
+               do{
+                  OnFwd(OUT_A+OUT_C);
+               }while(distance<70);
+               repeat(2){
+                  Turn_right();
+               }
+               ClearSensor(SENSOR_1);
+               ClearSensor(SENSOR_3);
+               OnFwd(OUT_A + OUT_C);
+               do{
+                  if(SENSOR_2 > THRESHOLD){
+                     OnFwd(OUT_A);
+                     Float(OUT_C);
+                  }else{
+                     Float(OUT_A);
+                     OnFwd(OUT_C);
+                  }
+               }while(-distance > DISTANCE_X2);
+               Off(OUT_A + OUT_C);
+            }
+         }else if(DISTANCE_X2==0){
+            if(DISTANCE_Y2>0){
+               ClearSensor(SENSOR_1);
+               ClearSensor(SENSOR_3);
+               do{
+                  if(SENSOR_2 > THRESHOLD){
+                     OnFwd(OUT_A);
+                     Float(OUT_C);
+                  }else{
+                     Float(OUT_A);
+                     OnFwd(OUT_C);
+                  }
+               }while(distance < 60);
+               Turn_left();
+               ClearSensor(SENSOR_1);
+               ClearSensor(SENSOR_3);
+               OnFwd(OUT_A + OUT_C);
+               do{
+                  if(SENSOR_2 > THRESHOLD){
+                     OnFwd(OUT_A);
+                     Float(OUT_C);
+               }else{
+                     Float(OUT_A);
+                     OnFwd(OUT_C);
+                  }
+               }while(distance < DISTANCE_Y2);
+               Off(OUT_A + OUT_C);
+            }else if(DISTANCE_Y2<0){
+               ClearSensor(SENSOR_1);
+               ClearSensor(SENSOR_3);
+               do{
+                  if(SENSOR_2 > THRESHOLD){
+                     OnFwd(OUT_A);
+                     Float(OUT_C);
+                  }else{
+                     Float(OUT_A);
+                     OnFwd(OUT_C);
+                  }
+               }while(distance < 70);
+               Turn_right();
+               ClearSensor(SENSOR_1);
+               ClearSensor(SENSOR_3);
+               OnFwd(OUT_A + OUT_C);
+               do{
+                  if(SENSOR_2 > THRESHOLD){
+                     OnFwd(OUT_A);
+                     Float(OUT_C);
+               }else{
+                     Float(OUT_A);
+                     OnFwd(OUT_C);
+                  }
+               }while(-distance > DISTANCE_Y2);
+               Off(OUT_A + OUT_C);
+            }
+         }else if(DISTANCE_X2>0){
+            if(DISTANCE_Y2>0){
+               ClearSensor(SENSOR_1);
+               ClearSensor(SENSOR_3);
+               OnFwd(OUT_A + OUT_C);
+               do{
+                  if(SENSOR_2 > THRESHOLD){
+                     OnFwd(OUT_A);
+                     Off(OUT_C);
+                  }else{
+                     Off(OUT_A);
+                     OnFwd(OUT_C);
+                  }
+               }while(distance < DISTANCE_X2+90);
+               Off(OUT_A + OUT_C);
+               Turn_left();
+               ClearSensor(SENSOR_1);
+               ClearSensor(SENSOR_3);
+               OnFwd(OUT_A + OUT_C);
+               do{
+                  if(SENSOR_2 > THRESHOLD){
+                     OnFwd(OUT_A);
+                     Float(OUT_C);
+               }else{
+                     Float(OUT_A);
+                     OnFwd(OUT_C);
+                  }
+               }while(distance < DISTANCE_Y2);
+               Off(OUT_A + OUT_C);
+            }else{
+               ClearSensor(SENSOR_1);
+               ClearSensor(SENSOR_3);
+               OnFwd(OUT_A + OUT_C);
+               do{
+                  if(SENSOR_2 > THRESHOLD){
+                     OnFwd(OUT_A);
+                     Float(OUT_C);
+                  }else{
+                     Float(OUT_A);
+                     OnFwd(OUT_C);
+                  }
+               }while(distance < DISTANCE_X2+90);
+               Off(OUT_A + OUT_C);
+               Turn_right();
+               ClearSensor(SENSOR_1);
+               ClearSensor(SENSOR_3);
+               OnFwd(OUT_A + OUT_C);
+               do{
+                  if(SENSOR_2 > THRESHOLD){
+                     OnFwd(OUT_A);
+                     Float(OUT_C);
+               }else{
+                     Float(OUT_A);
+                     OnFwd(OUT_C);
+                  }
+               }while(-distance > DISTANCE_Y2);
+               Off(OUT_A + OUT_C);
+            }
+         }else if(DISTANCE_X2<0){
+            if(DISTANCE_Y2>0){
+               ClearSensor(SENSOR_1);
+               ClearSensor(SENSOR_3);
+               do{
+                  OnFwd(OUT_A+OUT_C);
+               }while(distance<70);
+               Turn_left();
+               ClearSensor(SENSOR_1);
+               ClearSensor(SENSOR_3);
+               OnFwd(OUT_A + OUT_C);
+               do{
+                  if(SENSOR_2 > THRESHOLD){
+                     OnFwd(OUT_A);
+                     Float(OUT_C);
+               }else{
+                     Float(OUT_A);
+                     OnFwd(OUT_C);
+                  }
+               }while(distance < DISTANCE_Y2+30);
+               Off(OUT_A + OUT_C);
+               Turn_left();
+               ClearSensor(SENSOR_1);
+               ClearSensor(SENSOR_3);
+               OnFwd(OUT_A + OUT_C);
+               do{
+                  if(SENSOR_2 > THRESHOLD){
+                     OnFwd(OUT_A);
+                     Float(OUT_C);
+                  }else{
+                     Float(OUT_A);
+                     OnFwd(OUT_C);
+                  }
+               }while(-distance > DISTANCE_X2);
+               Off(OUT_A + OUT_C);
+            }else{
+               ClearSensor(SENSOR_1);
+               ClearSensor(SENSOR_3);
+               do{
+                  OnFwd(OUT_A+OUT_C);
+               }while(distance<70);
+               Turn_right();
+               ClearSensor(SENSOR_1);
+               ClearSensor(SENSOR_3);
+               OnFwd(OUT_A + OUT_C);
+               do{
+                  if(SENSOR_2 > THRESHOLD){
+                     OnFwd(OUT_A);
+                     Float(OUT_C);
+               }else{
+                     Float(OUT_A);
+                     OnFwd(OUT_C);
+                  }
+               }while(-distance > DISTANCE_Y2-15);
+               Off(OUT_A + OUT_C);
+               Turn_right();
+               ClearSensor(SENSOR_1);
+               ClearSensor(SENSOR_3);
+               OnFwd(OUT_A + OUT_C);
+               do{
+                  if(SENSOR_2 > THRESHOLD){
+                     OnFwd(OUT_A);
+                     Float(OUT_C);
+                  }else{
+                     Float(OUT_A);
+                     OnFwd(OUT_C);
+                  }
+               }while(-distance > DISTANCE_X2);
+               Off(OUT_A + OUT_C);
+            }
+         }
+         
+/*############################################################################*/
+
+         if(DISTANCE_X2==0&&DISTANCE_Y2==0){
+            Off(OUT_A+OUT_C);
+         }else{
+            ClearSensor(SENSOR_1);
+            ClearSensor(SENSOR_3);
+            do{
+               OnRev(OUT_A+OUT_C);
+            }while(distance>-60);
+         }
+
+         Off(OUT_A+OUT_C);
+
+         arm_down();
+
+         PlaySound(1);//finish
+
+/*############################################################################*/
+/*x1not=1*/
+
+      }else{
+         ClearSensor(SENSOR_1);
+         ClearSensor(SENSOR_3);
+         OnFwd(OUT_A + OUT_C);
+         do{
+            if(SENSOR_2 > THRESHOLD){
+               OnFwd(OUT_A);
+               Off(OUT_C);
+            }else{
+               Off(OUT_A);
+               OnFwd(OUT_C);
+            }
+         }while(distance < DISTANCE_X1-45);
+         Off(OUT_A + OUT_C);
+
+         arm_up();
+
+/*############################################################################*/
+/*ifx2,y2*/
+         if(DISTANCE_X2==0&&DISTANCE_Y2==0){
+
+            Off(OUT_A+OUT_C);
+
+         }else if(DISTANCE_Y2==0){
+            if(DISTANCE_X2>0){
+               ClearSensor(SENSOR_1);
+               ClearSensor(SENSOR_3);
+               OnFwd(OUT_A + OUT_C);
+               do{
+                  if(SENSOR_2 > THRESHOLD){
+                     OnFwd(OUT_A);
+                     Float(OUT_C);
+                  }else{
+                     Float(OUT_A);
+                     OnFwd(OUT_C);
+                  }
+               }while(distance < DISTANCE_X2+30);
+               Off(OUT_A + OUT_C);
+            }else if(DISTANCE_X2<0){
+               ClearSensor(SENSOR_1);
+               ClearSensor(SENSOR_3);
+               do{
+                  OnFwd(OUT_A+OUT_C);
+               }while(distance<70);
+               repeat(2){
+                  Turn_right();
+               }
+               ClearSensor(SENSOR_1);
+               ClearSensor(SENSOR_3);
+               OnFwd(OUT_A + OUT_C);
+               do{
+                  if(SENSOR_2 > THRESHOLD){
+                     OnFwd(OUT_A);
+                     Float(OUT_C);
+                  }else{
+                     Float(OUT_A);
+                     OnFwd(OUT_C);
+                  }
+               }while(-distance > DISTANCE_X2);
+               Off(OUT_A + OUT_C);
+            }
+         }else if(DISTANCE_X2==0){
+            if(DISTANCE_Y2>0){
+               ClearSensor(SENSOR_1);
+               ClearSensor(SENSOR_3);
+               do{
+                  if(SENSOR_2 > THRESHOLD){
+                     OnFwd(OUT_A);
+                     Float(OUT_C);
+                  }else{
+                     Float(OUT_A);
+                     OnFwd(OUT_C);
+                  }
+               }while(distance < 60);
+               Turn_left();
+               ClearSensor(SENSOR_1);
+               ClearSensor(SENSOR_3);
+               OnFwd(OUT_A + OUT_C);
+               do{
+                  if(SENSOR_2 > THRESHOLD){
+                     OnFwd(OUT_A);
+                     Float(OUT_C);
+               }else{
+                     Float(OUT_A);
+                     OnFwd(OUT_C);
+                  }
+               }while(distance < DISTANCE_Y2);
+               Off(OUT_A + OUT_C);
+            }else if(DISTANCE_Y2<0){
+               ClearSensor(SENSOR_1);
+               ClearSensor(SENSOR_3);
+               do{
+                  if(SENSOR_2 > THRESHOLD){
+                     OnFwd(OUT_A);
+                     Float(OUT_C);
+                  }else{
+                     Float(OUT_A);
+                     OnFwd(OUT_C);
+                  }
+               }while(distance < 70);
+               Turn_right();
+               ClearSensor(SENSOR_1);
+               ClearSensor(SENSOR_3);
+               OnFwd(OUT_A + OUT_C);
+               do{
+                  if(SENSOR_2 > THRESHOLD){
+                     OnFwd(OUT_A);
+                     Float(OUT_C);
+               }else{
+                     Float(OUT_A);
+                     OnFwd(OUT_C);
+                  }
+               }while(-distance > DISTANCE_Y2);
+               Off(OUT_A + OUT_C);
+            }
+         }else if(DISTANCE_X2>0){
+            if(DISTANCE_Y2>0){
+               ClearSensor(SENSOR_1);
+               ClearSensor(SENSOR_3);
+               OnFwd(OUT_A + OUT_C);
+               do{
+                  if(SENSOR_2 > THRESHOLD){
+                     OnFwd(OUT_A);
+                     Off(OUT_C);
+                  }else{
+                     Off(OUT_A);
+                     OnFwd(OUT_C);
+                  }
+               }while(distance < DISTANCE_X2+90);
+               Off(OUT_A + OUT_C);
+               Turn_left();
+               ClearSensor(SENSOR_1);
+               ClearSensor(SENSOR_3);
+               OnFwd(OUT_A + OUT_C);
+               do{
+                  if(SENSOR_2 > THRESHOLD){
+                     OnFwd(OUT_A);
+                     Float(OUT_C);
+               }else{
+                     Float(OUT_A);
+                     OnFwd(OUT_C);
+                  }
+               }while(distance < DISTANCE_Y2);
+               Off(OUT_A + OUT_C);
+            }else{
+               ClearSensor(SENSOR_1);
+               ClearSensor(SENSOR_3);
+               OnFwd(OUT_A + OUT_C);
+               do{
+                  if(SENSOR_2 > THRESHOLD){
+                     OnFwd(OUT_A);
+                     Float(OUT_C);
+                  }else{
+                     Float(OUT_A);
+                     OnFwd(OUT_C);
+                  }
+               }while(distance < DISTANCE_X2+90);
+               Off(OUT_A + OUT_C);
+               Turn_right();
+               ClearSensor(SENSOR_1);
+               ClearSensor(SENSOR_3);
+               OnFwd(OUT_A + OUT_C);
+               do{
+                  if(SENSOR_2 > THRESHOLD){
+                     OnFwd(OUT_A);
+                     Float(OUT_C);
+               }else{
+                     Float(OUT_A);
+                     OnFwd(OUT_C);
+                  }
+               }while(-distance > DISTANCE_Y2);
+               Off(OUT_A + OUT_C);
+            }
+         }else if(DISTANCE_X2<0){
+            if(DISTANCE_Y2>0){
+               ClearSensor(SENSOR_1);
+               ClearSensor(SENSOR_3);
+               do{
+                  OnFwd(OUT_A+OUT_C);
+               }while(distance<70);
+               Turn_left();
+               ClearSensor(SENSOR_1);
+               ClearSensor(SENSOR_3);
+               OnFwd(OUT_A + OUT_C);
+               do{
+                  if(SENSOR_2 > THRESHOLD){
+                     OnFwd(OUT_A);
+                     Float(OUT_C);
+               }else{
+                     Float(OUT_A);
+                     OnFwd(OUT_C);
+                  }
+               }while(distance < DISTANCE_Y2+30);
+               Off(OUT_A + OUT_C);
+               Turn_left();
+               ClearSensor(SENSOR_1);
+               ClearSensor(SENSOR_3);
+               OnFwd(OUT_A + OUT_C);
+               do{
+                  if(SENSOR_2 > THRESHOLD){
+                     OnFwd(OUT_A);
+                     Float(OUT_C);
+                  }else{
+                     Float(OUT_A);
+                     OnFwd(OUT_C);
+                  }
+               }while(-distance > DISTANCE_X2);
+               Off(OUT_A + OUT_C);
+            }else{
+               ClearSensor(SENSOR_1);
+               ClearSensor(SENSOR_3);
+               do{
+                  OnFwd(OUT_A+OUT_C);
+               }while(distance<70);
+               Turn_right();
+               ClearSensor(SENSOR_1);
+               ClearSensor(SENSOR_3);
+               OnFwd(OUT_A + OUT_C);
+               do{
+                  if(SENSOR_2 > THRESHOLD){
+                     OnFwd(OUT_A);
+                     Float(OUT_C);
+               }else{
+                     Float(OUT_A);
+                     OnFwd(OUT_C);
+                  }
+               }while(-distance > DISTANCE_Y2-15);
+               Off(OUT_A + OUT_C);
+               Turn_right();
+               ClearSensor(SENSOR_1);
+               ClearSensor(SENSOR_3);
+               OnFwd(OUT_A + OUT_C);
+               do{
+                  if(SENSOR_2 > THRESHOLD){
+                     OnFwd(OUT_A);
+                     Float(OUT_C);
+                  }else{
+                     Float(OUT_A);
+                     OnFwd(OUT_C);
+                  }
+               }while(-distance > DISTANCE_X2);
+               Off(OUT_A + OUT_C);
+            }
+         }
+
+/*############################################################################*/
+         
+         if(DISTANCE_X2==0&&DISTANCE_Y2==0){
+            Off(OUT_A+OUT_C);
+         }else{
+            ClearSensor(SENSOR_1);
+            ClearSensor(SENSOR_3);
+            do{
+               OnRev(OUT_A+OUT_C);
+            }while(distance>-60);
+         }
+
+         Off(OUT_A+OUT_C);
+
+         arm_down();
+
+         PlaySound(1);//finish
+      }
+   }
+   
+   AddToDatalog(Timer(1));
+   
+}
+/*main_finish*/
+/*############################################################################*/
+
+sub Turn_right(){
+   ClearSensor(SENSOR_1);
+   ClearSensor(SENSOR_3);
+   do{
+      OnFwd(OUT_A);
+      OnRev(OUT_C);
+   }while(SENSOR_1 < TURN_COUNT_1);
+      Off(OUT_A+OUT_C);
+   do{
+      OnFwd(OUT_A);
+      OnRev(OUT_C);
+   }while(SENSOR_2 > THRESHOLD);
+   Off(OUT_A + OUT_C);
+}
+
+sub Turn_left(){
+   ClearSensor(SENSOR_1);
+   ClearSensor(SENSOR_3);
+   do{
+      OnFwd(OUT_C);
+      OnRev(OUT_A);
+   }while(SENSOR_3 < TURN_COUNT_1);
+      Off(OUT_A+OUT_C);
+   do{
+      OnFwd(OUT_C);
+      OnRev(OUT_A);
+   }while(SENSOR_2 > THRESHOLD);
+   Off(OUT_A + OUT_C);
+}
+
+sub arm_up(){
+   SetPower(OUT_B,5);
+   arm = 0;
+   do{
+      OnFwd(OUT_B);
+      arm++;
+   }while(arm<15);
+   Off(OUT_B);
+}
+
+sub arm_down(){
+   SetPower(OUT_B,1);
+   arm = 0;
+   do{
+      OnRev(OUT_B);
+      arm++;
+   }while(arm<20);
+   Off(OUT_B);
+}
+
+
+
+
+
+
+
+

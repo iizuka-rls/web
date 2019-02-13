@@ -1,0 +1,275 @@
+#left{
+	width:20px;
+	height:620px;
+	margin:0;
+	float:left;
+	display:inline;
+	background-color:#FFF;
+	
+	}
+
+#Middle_left{
+	background-image:url(../../img/layout/Middle_left.png);
+	background-color:#FFF;
+	background-repeat:no-repeat;
+	margin-left:0px;
+	margin-top:0px;
+	width:20px;
+	height:350px;
+	margin-bottom:0px;
+	float:left;
+	display:inline;
+
+}
+
+#middle_back_left{
+	background-image:url(../../img/layout/middle_back_left.png);
+	background-repeat:repeat-y;
+	float:left;
+	width:20px;
+	height:270px;
+	display:inline;
+	}
+
+#right{
+	width:20px;
+	margin:0;
+	height:620px;
+	float:left;
+	display:inline;
+	background-color:#FFF;
+	
+	}
+
+#Middle_right{
+	background-image:url(../../img/layout/Middle_right.png);
+	margin-left:0px;
+	margin-top:0px;
+	width:20px;
+	height:350px;
+	margin-bottom:0px;
+	float:left;
+	display:inline;
+}
+
+#middle_back_right{
+	background-image:url(../../img/layout/middle_back_right.png);
+	background-repeat:repeat-y;
+	float:left;
+	width:20px;
+	height:270px;
+	display:inline;
+	}
+
+#content{
+	background-color:#FFF;
+	width:890px;
+	height:620px;
+	float:left;
+	margin:auto;
+	overflow:visible;
+	display:inline;
+	}
+
+#title{
+	margin-left:15px;	
+	}
+	
+#aboutus{
+	font-family:verdana;
+	
+	font-size:12pt;
+	line-height:1.4em;
+	
+	/*font:14pt Arial, sans-serif; 
+	letter-spacing:-1px;*/
+	margin-left:15px;
+	margin-top:10px;
+	width:850px;
+	}
+	
+#gaiyou{
+	background-image:url(../../img/introduction/gaiyou.png);
+	background-repeat:no-repeat;
+	margin-left:0px;
+	margin-bottom:10px;
+	width:119px;
+	height:18px;
+	text-indent:-9999px;
+	
+	}	
+
+#Introduction {
+	background-image:url(file:///C|/Users/takahashi/Desktop/WEB_rayout_image/Introduction.png);
+	margin-left:0px;
+	margin-top:0px;
+	width:112px;
+	height:35px;
+	margin-bottom:0px;
+	float:left;
+	display:inline;
+	text-indent: -1000px;
+
+}
+
+a#Introduction {
+	background-image:url(../../img/layout/Introduction.png);
+	margin-left:0px;
+	margin-top:0px;
+	width:112px;
+	height:35px;
+	margin-bottom:0px;
+	float:left;
+	display:inline;
+	overflow:hidden;
+	outline:none;	
+
+}
+
+#Groups {
+	background-image: url(../../img/layout/hover_Research.png);
+	background-position:top right;
+	background-repeat:no-repeat;
+	margin-left:0px;
+	margin-top:0px;
+	width:110px;
+	height:35px;
+	margin-bottom:0px;
+	float:left;
+	display:block;
+	text-indent: -2000px;
+
+}
+
+a#Groups {
+	background-image: url(../../img/layout/hover_Research.png);
+	background-position:top right;
+	background-repeat:no-repeat;
+	margin-left:0px;
+	margin-top:0px;
+	width:110px;
+	height:35px;
+	margin-bottom:0px;
+	float:left;
+	display: block;
+	overflow:hidden;
+	outline:none;	
+}
+
+a#Groups:hover{
+	background-position: top left;
+	overflow:hidden;
+	outline:none;	
+}
+
+#Papers {
+	background-image: url(../../img/layout/hover_Papers.png);
+	background-position:top right;
+	background-repeat:no-repeat;
+	margin-left:0px;
+	margin-top:0px;
+	width:110px;
+	height:35px;
+	margin-bottom:0px;
+	float:left;
+	display:inline;
+	text-indent: -2000px;
+	overflow:hidden;
+	outline:none;	
+
+}
+
+a#Papers {
+	background-image: url(../../img/layout/hover_Papers.png);
+	background-position:top right;
+	background-repeat:no-repeat;
+	margin-left:0px;
+	margin-top:0px;
+	width:110px;
+	height:35px;
+	margin-bottom:0px;
+	float:left;
+	display:inline;
+	overflow:hidden;
+	outline:none;	
+
+}
+
+a#Papers:hover{
+	background-position: top left;
+	overflow:hidden;
+	outline:none;	
+}
+
+#Members {
+	background-image:url(../../img/layout/hover_Members.png);
+	background-position:top right;
+	background-repeat:no-repeat;
+	margin-left:0px;
+	margin-top:0px;
+	width:108px;
+	height:35px;
+	margin-bottom:0px;
+	float:left;
+	display:inline;
+	text-indent: -1000px;
+}
+
+a#Members {
+	background-image:url(../../img/layout/hover_Members.png);
+	background-position:top right;
+	background-repeat:no-repeat;
+	margin-left:0px;
+	margin-top:0px;
+	width:108px;
+	height:35px;
+	margin-bottom:0px;
+	float:left;
+	display:inline;
+	overflow:hidden;
+	outline:none;	
+}
+
+a#Members:hover{
+	background-position: top left;
+	overflow:hidden;
+	outline:none;	
+}
+
+#Schedule{
+	background-image: url(../../img/layout/hover_Schedule.png);
+	background-position:top right;
+	background-repeat:no-repeat;
+	margin-left:0px;
+	margin-top:0px;
+	width:112px;
+	height:35px;
+	margin-bottom:0px;
+	float:left;
+	display:inline;
+	text-indent: -2000px;
+
+}
+
+a#Schedule{
+	background-image: url(../../img/layout/hover_Schedule.png);
+	background-position:top right;
+	background-repeat:no-repeat;
+	margin-left:0px;
+	margin-top:0px;
+	width:112px;
+	height:35px;
+	margin-bottom:0px;
+	float:left;
+	display:inline;
+	overflow:hidden;
+	outline:none;	
+
+}
+
+
+a#Schedule:hover{
+	background-position: top left;
+	overflow:hidden;
+	outline:none;	
+}

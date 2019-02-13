@@ -1,0 +1,188 @@
+@charset "utf-8";
+/* ==========================
+ * BASE
+ * last-update: 08/11/03
+========================== */
+*html .iepngfix{ /* For iepngfix.js */
+	behavior: expression(IEPNGFIX.fix(this));
+}
+html{
+	width : 100%;
+	height : 100%;
+}
+body {
+	width : 100%; 
+	height : 100%;
+	padding : 0 0 0 0;
+	margin : 0 0 0 0;
+	/* Setting basic font */
+	font-size : 9pt;
+	font-family : Arial, Helvetica, sans-serif;
+	color : #333;
+	background-color : #fff;
+	background-image : url(../img/common_body_bg.png);
+	background-repeat : repeat-x;
+}
+/* ==========================
+	ELEMENTS 
+========================== */
+h2{
+	display: block;
+	font-size : 11pt;
+	font-weight : bold;
+}
+ul, li{
+	margin : 0 0 0 0;
+	padding : 0 0 0 0;
+}
+a{/*firefoxでリンクは線を消すため*/
+	outline : none;
+}
+span.sub{
+	font-size : 60%;
+}
+span.small{
+	font-size : 60%;
+}
+/* ==========================
+	LAYOUT 
+========================== */
+/*
+ * wrapper
+ */
+#wrapper{
+	width : 90%;
+	min-height : 100%;
+	height : auto !important;
+	height : 400px; /* min-heightのクロスブラウザ対応 */
+	position: relative;
+	top	: 0em;
+	margin: 0 auto 0 auto; /* 中央寄せ */
+	border-left  : 5px solid #333;
+	border-right : 5px solid #333;
+	background-color : #eee;
+}
+
+/*
+ * header
+ */
+#header{
+	width : 100%;
+	height : 90px;
+	position : relative;
+	background-image : url(../img/common_header_bg.jpg);
+	background-color : #333;
+	border-bottom : 1px solid #000;
+}
+#header h1{
+	display : block;
+	width : 360px;
+	height : 45px;
+	position : relative;
+	top : 0.5em;
+	left: 1em;
+}
+#header h1 a img{
+	width : 360px;
+	height : 45px;
+}
+div#header_navi{
+	height : 1.5em; 
+	overflow : visible;
+	position : absolute;
+	bottom : 1em;
+	right : 1em;
+}
+div#header_navi ul{
+	clear: both;
+	margin: 0 0 0 0;
+    padding: 0 0 0 0;
+	position : relative;
+}
+div#header_navi ul li{
+	z-index : 200;
+	position : relative;
+	text-align : center;
+	margin	: 0 0 0 0.5em;
+	padding	: 0 0 0 0;
+	float: left;
+	line-height : 1.0em;
+}
+div#header_navi ul li a{
+	display : block;
+	width : 6em;
+	height : 1.5em;
+	text-align : center;
+	color : #ccc;
+	font-size : 9pt;
+	font-weight : bold;
+	line-height : 1.5em;
+}
+div#header_navi ul li a:hover{
+	color : #fff;
+}
+div#header_navi ul div.ahover{/* For jquery ahover */
+	position : absolute;
+	background-color : #f90;
+	border: 2px solid #cef;
+    -webkit-border-radius: 0.5em;
+    -moz-border-radius: 0.5em;
+}
+div.ahover{/* For jquery ahover */
+	position : absolute;
+}
+div#header_lang{
+	width : auto;
+	height : 1.5em; 
+	overflow : visible;
+	position : absolute;
+	bottom : 1em;
+	right : 1em;
+}
+a#header_lang{
+	display : block;
+	width : 6em;
+	height : 1.5em;
+	position : absolute;
+	top : 1em;
+	right : 1em;
+	margin	: 0 0 0 0;
+	padding	: 0 0 0 0;
+	text-align : center;
+	line-height : 1.5em;
+	color : #fff;
+	font-family : Arial Black;
+	border-right : solid #fff 0.5em;
+	border-left : solid #fff 0.5em;
+}
+a#header_lang:hover{
+	color : #f90;
+	border-right : solid #f90 0.5em;
+	border-left : solid #f90 0.5em;
+}
+
+/*
+ * footer
+ */
+.clear_float{
+    clear:both;
+    height: 0px;
+    font-size: 1px;
+    line-height: 0px;
+}
+#footer{
+	width : 100%;
+	height : 50px;
+	position : absolute;
+	bottom : 0px;	/*　#footerを#wrapperの最下部に固定　*/
+	background-color : #333;
+	background-image : url(../img/common_header_bg.jpg);
+	background-position : bottom;
+	text-align : right;
+}
+#footer span{
+	line-height : 40px;
+	padding-right : 1em;
+	font-size : 8pt;
+	color : #fff;
+}

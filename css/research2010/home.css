@@ -1,0 +1,439 @@
+.photo_cap_2colum{
+	float:left;
+	margin-left:30px;
+	margin-right:50px;
+	
+	padding:5px;
+	font-size:12px;
+	
+	}
+
+.photo_cap{
+	
+	padding:5px;
+	font-size:12px;
+	
+	}
+
+
+.slide_top{
+	font-family:"ÉqÉâÉMÉmäpÉS Pro W3", "Hiragino Kaku Gothic Pro", "ÉÅÉCÉäÉI", Meiryo, Osaka, sans-serif Verdana, Arial, Helvetica, sans-serif;
+	font-size:16px;
+	cursor:pointer;
+	background-color:#CCC;	
+	margin:0px;
+	
+	
+	padding:2px;
+	
+}
+
+.slide_content{
+	font-family:'ÉqÉâÉMÉmäpÉS Pro W3','Hiragino Kaku Gothic Pro','ÉÅÉCÉäÉI',Meiryo,'ÇlÇr ÇoÉSÉVÉbÉN',sans-serif;
+	margin:0px;
+	padding:5px;
+	text-align:left;
+	
+	font-size:16px;
+	
+}
+
+#menu {
+	position:absolute;
+	top:150px;
+	
+	width:120px;
+	height:300px;
+	display:inline;
+	}		
+
+#content_head{
+	width:890px;
+	height:30px;
+	margin:3px;
+	
+	
+	}
+
+
+#group_name{
+	font: 2em normal Georgia, 'Times New Roman', Times, serif;
+	letter-spacing: 0.3em;
+	color: #666;
+	margin-left:10px;
+	
+	width:500px;
+	
+	margin:2px;
+	margin-top:0px;
+	
+	}
+
+#group_content{
+	width:760px;
+	height:3000px;
+	float:left;
+	
+	
+	padding:5px;
+	
+	}
+	
+.content_name{
+	float:left;
+	font-size:18px;
+	font-family:Arial, Helvetica, sans-serif;
+	padding-left:15px;
+	padding-top:10px;
+	padding-bottom:5px;
+	font-family:'ÉqÉâÉMÉmäpÉS Pro W3','Hiragino Kaku Gothic Pro','ÉÅÉCÉäÉI',Meiryo,'ÇlÇr ÇoÉSÉVÉbÉN',sans-serif;
+	}
+
+.content{
+	
+	font-size:16px;
+	width:670px;
+	
+	margin-left:10px;
+	
+	padding-left:15px;
+	padding-top:5px;
+	padding-bottom:5px;
+	overflow:hidden;
+	outline:none;
+	
+	}
+
+.img{
+	text-align:center;
+	
+	width:250px;
+	float:left;
+	
+	}
+	
+#humanoid-img{
+	text-align:center;
+	width:100%;
+	float:left;
+	}
+
+#img-wrap{
+	width:600px;
+	height:220px;
+	text-align:center;
+	padding:10px
+	}
+
+.img-single{
+	height:220px;
+	text-align:center;
+	margin-top:20px;
+	}
+	
+.movie{
+	float:left;
+	width:670px;
+	text-align:center;
+	
+	
+	}
+	
+.movie_cap{
+	width:670px;
+	text-align:center;
+	
+	font-size:16px;
+	
+	}	
+
+.naiyou_img{
+	float:left;
+	width:160px;
+	
+	}
+
+.naiyou_content{
+	float:left;
+	font-size:16px;
+	width:440px;
+	padding:20px;
+	
+	}
+
+#menuwrap{
+	float:left;
+	width:120px;
+	height:3000px;
+	display:inline;
+	
+	}
+	
+#menu {
+	position:absolute;
+	top:150px;
+	
+	width:120px;
+	height:300px;
+	display:inline;
+	}	
+
+
+#left{
+	width:20px;
+	height:2800px;
+	margin:0;
+	float:left;
+	display:inline;
+	background-color:#FFF;
+	
+	}
+
+#Middle_left{
+	background-image:url(../../img/layout/Middle_left.png);
+	background-color:#FFF;
+	background-repeat:no-repeat;
+	margin-left:0px;
+	margin-top:0px;
+	width:20px;
+	height:350px;
+	margin-bottom:0px;
+	float:left;
+	display:inline;
+
+}
+
+#middle_back_left{
+	background-image:url(../../img/layout/middle_back_left.png);
+	background-repeat:repeat-y;
+	float:left;
+	width:20px;
+	height:2450px;
+	display:inline;
+	}
+
+#right{
+	width:20px;
+	margin:0;
+	height:2800px;
+	float:left;
+	display:inline;
+	background-color:#FFF;
+	
+	}
+
+#Middle_right{
+	background-image:url(../../img/layout/Middle_right.png);
+	margin-left:0px;
+	margin-top:0px;
+	width:20px;
+	height:350px;
+	margin-bottom:0px;
+	float:left;
+	display:inline;
+}
+
+#middle_back_right{
+	background-image:url(../../img/layout/middle_back_right.png);
+	background-repeat:repeat-y;
+	float:left;
+	width:20px;
+	height:2450px;
+	display:inline;
+	}
+
+#content{
+	
+	background-color:#FFF;
+	width:890px;
+	height:2800px;
+	float:left;
+	margin:auto;
+	overflow:visible;
+	display:inline;
+	}
+
+#Introduction {
+	background-image:url(../../img/layout/hover_Introduction.png);
+	background-position:top right;
+	background-repeat:no-repeat;
+	margin-left:0px;
+	margin-top:0px;
+	width:112px;
+	height:35px;
+	margin-bottom:0px;
+	float:left;
+	display:inline;
+	text-indent: -1000px;
+
+}
+
+a#Introduction {
+	background-image:url(../../img/layout/hover_Introduction.png);
+	background-position:top right;
+	background-repeat:no-repeat;
+	margin-left:0px;
+	margin-top:0px;
+	width:112px;
+	height:35px;
+	margin-bottom:0px;
+	float:left;
+	display:inline;
+	overflow:hidden;
+	outline:none;
+}
+
+a#Introduction:hover{
+	background-position: top left;
+	overflow:hidden;
+	outline:none;
+}
+
+#Groups {
+	background-image: url(../../img/layout/Research.png);
+	background-position:top right;
+	background-repeat:no-repeat;
+	margin-left:0px;
+	margin-top:0px;
+	width:110px;
+	height:35px;
+	margin-bottom:0px;
+	float:left;
+	display:block;
+	text-indent: -2000px;
+
+}
+
+a#Groups {
+	background-image: url(../../img/layout/Research.png);
+	background-position:top right;
+	background-repeat:no-repeat;
+	margin-left:0px;
+	margin-top:0px;
+	width:110px;
+	height:35px;
+	margin-bottom:0px;
+	float:left;
+	display: block;
+	overflow:hidden;
+	outline:none;
+
+}
+
+a#Groups:hover{
+	background-position: top left;
+	overflow:hidden;
+	outline:none;
+
+}
+
+#Papers {
+	background-image: url(../../img/layout/hover_Papers.png);
+	background-position:top right;
+	background-repeat:no-repeat;
+	margin-left:0px;
+	margin-top:0px;
+	width:110px;
+	height:35px;
+	margin-bottom:0px;
+	float:left;
+	display:inline;
+	text-indent: -2000px;
+
+}
+
+a#Papers {
+	background-image: url(../../img/layout/hover_Papers.png);
+	background-position:top right;
+	background-repeat:no-repeat;
+	margin-left:0px;
+	margin-top:0px;
+	width:110px;
+	height:35px;
+	margin-bottom:0px;
+	float:left;
+	display:inline;
+	overflow:hidden;
+	outline:none;	
+
+}
+
+a#Papers:hover{
+	background-position: top left;
+	overflow:hidden;
+	outline:none;	
+}
+
+#Members {
+	background-image:url(../../img/layout/hover_Members.png);
+	background-position:top right;
+	background-repeat:no-repeat;
+	margin-left:0px;
+	margin-top:0px;
+	width:108px;
+	height:35px;
+	margin-bottom:0px;
+	float:left;
+	display:inline;
+	text-indent: -1000px;
+}
+
+a#Members {
+	background-image:url(../../img/layout/hover_Members.png);
+	background-position:top right;
+	background-repeat:no-repeat;
+	margin-left:0px;
+	margin-top:0px;
+	width:108px;
+	height:35px;
+	margin-bottom:0px;
+	float:left;
+	display:inline;
+	overflow:hidden;
+	outline:none;
+}
+
+a#Members:hover{
+	background-position: top left;
+	overflow:hidden;
+	outline:none;	
+}
+
+
+#Schedule{
+	background-image: url(../../img/layout/hover_Schedule.png);
+	background-position:top right;
+	background-repeat:no-repeat;
+	margin-left:0px;
+	margin-top:0px;
+	width:112px;
+	height:35px;
+	margin-bottom:0px;
+	float:left;
+	display:inline;
+	text-indent: -2000px;
+
+}
+
+a#Schedule{
+	background-image: url(../../img/layout/hover_Schedule.png);
+	background-position:top right;
+	background-repeat:no-repeat;
+	margin-left:0px;
+	margin-top:0px;
+	width:112px;
+	height:35px;
+	margin-bottom:0px;
+	float:left;
+	display:inline;
+	overflow:hidden;
+	outline:none;	
+
+}
+
+
+a#Schedule:hover{
+	background-position: top left;
+	overflow:hidden;
+	outline:none;	
+}

@@ -1,0 +1,35 @@
+body{
+	background-color=#ffffff;
+}
+
+img{
+	border  : none;
+}
+
+.title_bar{
+	background-image : url(img/title_bar.png);
+	position: relative;
+	top	: 0px;
+	left	: 0px;
+	width	: 780px;
+	height	: 150px;
+	background-color : #ffffff;
+	border  : none;
+	padding : 0px;
+	color	: #ffffff;
+	font-size : 40pt;
+	font-family : "Impact";
+}
+.navi{
+	background-color : #ffffff;
+	background-image : url(img/navi_btn_shadow.png);
+	background-repeat: no-repeat;
+	background-position : 100% 100%;
+	position: absolute;
+	top	: 145px;
+	left	: 0px;
+	z-index : 1;
+	width	: 150px;
+	height	: 282px;
+	text-align : left;
+}

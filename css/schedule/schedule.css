@@ -1,0 +1,319 @@
+.schedule_content{
+	float:left;
+	width:440px;
+	height:500px;
+	
+	}
+
+
+
+#title{	
+	width:10em;
+	font-size:25px;
+	float:left;
+	padding:2px;
+	background-color:#CCC;
+	margin:5px;
+	
+	
+	}
+
+
+
+.month{
+	font-size:14px;
+	float:left;
+	width:35px;;
+	height:15px;;
+	margin-left:10px;
+	text-align:right;
+	margin:6px;
+	margin-right:0px;
+	}
+	
+.colon{
+	font-size:14px;
+	float:left;
+	width:5px;
+	height:15px;
+	margin:6px;
+	margin-left:0px;
+	margin-right:0px;
+	
+	
+	}	
+	
+.schedule{
+	font-size:14px;
+	width:auto;
+	height:auto;
+	float:left;
+	margin:6px;
+	line-height:18px;
+		
+	}	
+
+#left{
+	width:20px;
+	height:540px;
+	margin:0;
+	float:left;
+	display:inline;
+	background-color:#FFF;
+	
+	}
+
+#Middle_left{
+	background-image:url(../../img/layout/Middle_left.png);
+	background-color:#FFF;
+	background-repeat:no-repeat;
+	margin-left:0px;
+	margin-top:0px;
+	width:20px;
+	height:360px;
+	margin-bottom:0px;
+	float:left;
+	display:inline;
+
+}
+
+#middle_back_left{
+	background-image:url(../../img/layout/middle_back_left.png);
+	background-repeat:repeat-y;
+	float:left;
+	width:20px;
+	height:200px;
+	display:inline;
+	}
+
+#right{
+	width:20px;
+	margin:0;
+	height:540px;
+	float:left;
+	display:inline;
+	background-color:#FFF;
+	
+	}
+
+#Middle_right{
+	background-image:url(../../img/layout/Middle_right.png);
+	margin-left:0px;
+	margin-top:0px;
+	width:20px;
+	height:360px;
+	margin-bottom:0px;
+	float:left;
+	display:inline;
+}
+
+#middle_back_right{
+	background-image:url(../../img/layout/middle_back_right.png);
+	background-repeat:repeat-y;
+	float:left;
+	width:20px;
+	height:200px;
+	display:inline;
+	}
+
+#content{
+	background-color: #FFF;
+	width: 890px;
+	height: 460px;
+	float: left;
+	margin: auto;
+	overflow: visible;
+	display: inline;
+	
+	}
+
+#Introduction {
+	background-image:url(../../img/layout/hover_Introduction.png);
+	background-position:top right;
+	background-repeat:no-repeat;
+	margin-left:0px;
+	margin-top:0px;
+	width:112px;
+	height:35px;
+	margin-bottom:0px;
+	float:left;
+	display:inline;
+	text-indent: -1000px;
+
+}
+
+a#Introduction {
+	background-image:url(../../img/layout/hover_Introduction.png);
+	background-position:top right;
+	background-repeat:no-repeat;
+	margin-left:0px;
+	margin-top:0px;
+	width:112px;
+	height:35px;
+	margin-bottom:0px;
+	float:left;
+	display:inline;
+	overflow:hidden;
+	outline:none;	
+
+}
+
+a#Introduction:hover{
+	background-position: top left;
+	overflow:hidden;
+	outline:none;	
+}
+
+#Groups {
+	background-image: url(../../img/layout/hover_Research.png);
+	background-position:top right;
+	background-repeat:no-repeat;
+	margin-left:0px;
+	margin-top:0px;
+	width:110px;
+	height:35px;
+	margin-bottom:0px;
+	float:left;
+	display:block;
+	text-indent: -2000px;
+
+}
+
+a#Groups {
+	background-image: url(../../img/layout/hover_Research.png);
+	background-position:top right;
+	background-repeat:no-repeat;
+	margin-left:0px;
+	margin-top:0px;
+	width:110px;
+	height:35px;
+	margin-bottom:0px;
+	float:left;
+	display: block;
+	overflow:hidden;
+	outline:none;	
+}
+
+a#Groups:hover{
+	background-position: top left;
+	overflow:hidden;
+	outline:none;	
+}
+
+#Papers {
+	background-image: url(../../img/layout/hover_Papers.png);
+	background-position:top right;
+	background-repeat:no-repeat;
+	margin-left:0px;
+	margin-top:0px;
+	width:110px;
+	height:35px;
+	margin-bottom:0px;
+	float:left;
+	display:inline;
+	text-indent: -2000px;
+	overflow:hidden;
+	outline:none;	
+
+}
+
+a#Papers {
+	background-image: url(../../img/layout/hover_Papers.png);
+	background-position:top right;
+	background-repeat:no-repeat;
+	margin-left:0px;
+	margin-top:0px;
+	width:110px;
+	height:35px;
+	margin-bottom:0px;
+	float:left;
+	display:inline;
+	overflow:hidden;
+	outline:none;	
+
+}
+
+a#Papers:hover{
+	background-position: top left;
+	overflow:hidden;
+	outline:none;	
+}
+
+#Members {
+	background-image:url(../../img/layout/hover_Members.png);
+	background-position:top right;
+	background-repeat:no-repeat;
+	margin-left:0px;
+	margin-top:0px;
+	width:108px;
+	height:35px;
+	margin-bottom:0px;
+	float:left;
+	display:inline;
+	text-indent: -1000px;
+}
+
+a#Members {
+	background-image:url(../../img/layout/hover_Members.png);
+	background-position:top right;
+	background-repeat:no-repeat;
+	margin-left:0px;
+	margin-top:0px;
+	width:108px;
+	height:35px;
+	margin-bottom:0px;
+	float:left;
+	display:inline;
+	overflow:hidden;
+	outline:none;	
+}
+
+a#Members:hover{
+	background-position: top left;
+	overflow:hidden;
+	outline:none;	
+}
+
+#Schedule{
+	background-image: url(../../img/layout/Schedule.png);
+	background-position:top right;
+	background-repeat:no-repeat;
+	margin-left:0px;
+	margin-top:0px;
+	width:112px;
+	height:35px;
+	margin-bottom:0px;
+	float:left;
+	display:inline;
+	text-indent: -2000px;
+
+}
+
+a#Schedule{
+	background-image: url(../../img/layout/Schedule.png);
+	background-position:top right;
+	background-repeat:no-repeat;
+	margin-left:0px;
+	margin-top:0px;
+	width:112px;
+	height:35px;
+	margin-bottom:0px;
+	float:left;
+	display:inline;
+	overflow:hidden;
+	outline:none;	
+
+}
+
+
+a#Schedule:hover{
+	background-position: top left;
+	overflow:hidden;
+	outline:none;	
+}
+
+#sche{
+	height:600px;
+	width:auto;
+	
+	}

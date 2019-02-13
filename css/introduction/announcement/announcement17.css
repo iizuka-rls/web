@@ -1,0 +1,347 @@
+#left{
+	width:20px;
+	height:700px;
+	margin:0;
+	float:left;
+	display:inline;
+	background-color:#FFF;
+}
+
+#Middle_left{
+	background-image: url(../../../img/layout/Middle_left.png);
+	background-color: #FFF;
+	background-repeat: no-repeat;
+	margin-left: 0px;
+	margin-top: 0px;
+	width: 20px;
+	height: 350px;
+	margin-bottom: 0px;
+	float: left;
+	display: inline;
+}
+
+#middle_back_left{
+	background-image: url(../../../img/layout/middle_back_left.png);
+	background-repeat: repeat-y;
+	float: left;
+	width: 20px;
+	height: 800px;
+	display: inline;
+}
+
+#right{
+	width:20px;
+	height:800px;
+	margin:0;
+	float:left;
+	display:inline;
+	background-color:#FFF;
+}
+
+#Middle_right{
+	background-image: url(../../../img/layout/Middle_right.png);
+	margin-left: 0px;
+	margin-top: 0px;
+	width: 20px;
+	height: 350px;
+	margin-bottom: 0px;
+	float: left;
+	display: inline;
+}
+
+#middle_back_right{
+	background-image: url(../../../img/layout/middle_back_right.png);
+	background-repeat: repeat-y;
+	float: left;
+	width: 20px;
+	height: 900px;
+	display: inline;
+}
+
+#content{
+	background-color: #FFF;
+	width: 890px;
+	height: 1000px;
+	float: left;
+	margin: auto;
+	overflow: visible;
+	display: inline;
+	font-size: 14pt;
+}
+
+#Introduction {
+	background-image:url(../../../img/layout/Introduction.png);
+	background-position:top right;
+	background-repeat:no-repeat;
+	margin-left:0px;
+	margin-top:0px;
+	width:112px;
+	height:35px;
+	margin-bottom:0px;
+	float:left;
+	display:inline;
+	text-indent: -1000px;
+}
+
+a#Introduction {
+	background-image:url(../../../img/layout/Introduction.png);
+	background-position:top right;
+	background-repeat:no-repeat;
+	margin-left:0px;
+	margin-top:0px;
+	width:112px;
+	height:35px;
+	margin-bottom:0px;
+	float:left;
+	display:inline;
+	overflow:hidden;
+	outline:none;
+}
+
+a#Introduction:hover{
+	background-position: top left;
+	overflow:hidden;
+	outline:none;
+}
+
+
+#Members {
+	background-image:url(../../../img/layout/hover_Members.png);
+	background-position:top right;
+	background-repeat:no-repeat;
+	margin-left:0px;
+	margin-top:0px;
+	width:108px;
+	height:35px;
+	margin-bottom:0px;
+	float:left;
+	display:inline;
+	text-indent: -1000px;
+}
+
+a#Members {
+	background-image:url(../../../img/layout/hover_Members.png);
+	background-position:top right;
+	background-repeat:no-repeat;
+	margin-left:0px;
+	margin-top:0px;
+	width:108px;
+	height:35px;
+	margin-bottom:0px;
+	float:left;
+	display:inline;
+	overflow:hidden;
+	outline:none;
+}
+
+a#Members:hover{
+	background-position: top left;
+	overflow:hidden;
+	outline:none;	
+}
+
+
+
+#Groups {
+	background-image: url(../../../img/layout/hover_Research.png);
+	background-position:top right;
+	background-repeat:no-repeat;
+	margin-left:0px;
+	margin-top:0px;
+	width:110px;
+	height:35px;
+	margin-bottom:0px;
+	float:left;
+	display:block;
+	text-indent: -2000px;
+}
+
+a#Groups {
+	background-image: url(../../../img/layout/hover_Research.png);
+	background-position:top right;
+	background-repeat:no-repeat;
+	margin-left:0px;
+	margin-top:0px;
+	width:110px;
+	height:35px;
+	margin-bottom:0px;
+	float:left;
+	display: block;
+	overflow:hidden;
+	outline:none;	
+}
+
+a#Groups:hover{
+	background-position: top left;
+	overflow:hidden;
+	outline:none;	
+}
+
+#Papers {
+	background-image: url(../../../img/layout/hover_Papers.png);
+	background-position:top right;
+	background-repeat:no-repeat;
+	margin-left:0px;
+	margin-top:0px;
+	width:110px;
+	height:35px;
+	margin-bottom:0px;
+	float:left;
+	display:inline;
+	text-indent: -2000px;
+}
+
+a#Papers {
+	background-image: url(../../../img/layout/hover_Papers.png);
+	background-position:top right;
+	background-repeat:no-repeat;
+	margin-left:0px;
+	margin-top:0px;
+	width:110px;
+	height:35px;
+	margin-bottom:0px;
+	float:left;
+	display:inline;
+	overflow:hidden;
+	outline:none;
+}
+
+a#Papers:hover{
+	background-position: top left;
+	overflow:hidden;
+	outline:none;	
+}
+
+#Schedule{
+	background-image: url(../../../img/layout/hover_Schedule.png);
+	background-position:top right;
+	background-repeat:no-repeat;
+	margin-left:0px;
+	margin-top:0px;
+	width:112px;
+	height:35px;
+	margin-bottom:0px;
+	float:left;
+	display:inline;
+	text-indent: -2000px;
+}
+
+a#Schedule{
+	background-image: url(../../../img/layout/hover_Schedule.png);
+	background-position:top right;
+	background-repeat:no-repeat;
+	margin-left:0px;
+	margin-top:0px;
+	width:112px;
+	height:35px;
+	margin-bottom:0px;
+	float:left;
+	display:inline;
+	overflow:hidden;
+	outline:none;	
+}
+
+
+a#Schedule:hover{
+	background-position: top left;
+	overflow:hidden;
+	outline:none;	
+}
+
+ Takahashi 
+
+.article{
+	width	: 100%;
+	height	: auto;
+	z-index	: 2;
+	overflow: hidden;
+	text-align : left;
+	margin-top : 10px;
+	font-size : 12pt;
+}
+
+#title{	
+	width:8em;
+	font-size:25px;
+	padding:2px;
+	background-color:#CCC;
+	margin:10px;
+	}
+
+.text{
+	width : 640px;
+	font-size : 12pt;
+	margin-right : auto;
+	margin-left : auto;
+	margin-top:20px;
+	margin-bottom:20px;
+}
+
+.textSmall{
+	width : 560px;
+	font-size : 12pt;
+	margin-right : auto;
+	margin-left : auto;
+	margin-top:20px;
+	margin-bottom:0px;
+}
+
+.info_list{
+	width  : 560px;
+	margin-top : 10px;
+	margin-bottom : 10px;
+	margin-right : auto;
+	margin-left : auto;
+}
+
+.info_list li{
+	color : #000;
+	width  : 500px;
+	margin-top : 10px;
+	margin-bottom : 10px;
+	margin-right : auto;
+	margin-left : auto;
+	display : block;
+	font-size : 16pt;
+}
+
+.high_light{
+	color:#F00;
+	}
+
+.info_list_sp{
+	font-size : 16pt;
+	line-height : 25px;
+	color : #000;
+	display : block;
+	width  : 610px;
+	margin-top : 10px;
+	margin-bottom : 10px;
+	margin-right : auto;
+	margin-left : auto;
+	padding-left : 20px;
+	padding-right : 20px;
+	padding-bottom : 10px;
+	border: 2px solid #000;
+	text-align: left;
+}
+
+.info_list_sp h4{
+	font-size : 16pt;
+	line-height : 30px;
+	color : #000;
+	text-align : center;
+	display : block;
+	width  : 100%;
+	margin-top : 20px;
+	margin-bottom : 20px;
+	margin-right : auto;
+	margin-left : auto;
+	border-top: 3px solid #008;
+	border-bottom: 3px solid #008;
+}
+
+.article ul{
+	margin-top : 10px;
+	margin-bottom : 10px;
+}

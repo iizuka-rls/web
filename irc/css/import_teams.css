@@ -1,0 +1,10 @@
+@charset "utf-8";
+/* ==========================
+ * IMPORT TEAMS
+ * last-update: 08/11/26
+========================== */
+@import"reset.css";
+@import"base.css";
+@import"fancy-zoom.css";
+@import"twoCol.css";
+@import"teams.css";

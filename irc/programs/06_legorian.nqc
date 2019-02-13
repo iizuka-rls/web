@@ -1,0 +1,190 @@
+#define THRESHOLD 45
+#define DISTANCE  999   //count
+
+//  object(6,3)  goal(9,1)
+
+//From start point to object point
+#define X1 1060  //mm(X - length of body)
+#define Y1 (600/100*95)  //mm(Y * 0.95)
+
+//From object point to goal
+#define X2 (900-(X1/2))  //mm(1800/2 - (X1/2))
+#define Y2 ((400/100*95)-140)  //mm(Y * 0.95 - length of body180)
+
+//0.95 = Experience value for fine-tuning
+//It advances ,divided into two portions when running in the long distance.
+
+int a;
+
+task main()
+{
+
+CreateDatalog(20);
+Timer (1);
+ClearTimer (1);
+
+int distance;
+distance = 0;
+
+SetSensor(SENSOR_1,SENSOR_ROTATION);
+SetSensor(SENSOR_3,SENSOR_ROTATION);
+SetSensor(SENSOR_2,SENSOR_LIGHT);
+
+SetPower(OUT_B,6);
+
+
+//straight 3 cross
+SetPower(OUT_A,5);
+SetPower(OUT_C,5);
+distance = Y1; //mm
+stright_line(distance);
+
+
+//turn right 90 degrees
+SetPower(OUT_A,2);
+SetPower(OUT_C,5);
+turn_right_90();
+
+
+//straight 6(6 - length of body) cross
+SetPower(OUT_A,5);
+SetPower(OUT_C,5);
+distance = X1; //mm
+stright_line(distance);
+
+
+//arm up
+OnFwd(OUT_B);
+Wait(60);
+Off(OUT_B);
+
+
+//straight 900mm
+SetPower(OUT_A,5);
+SetPower(OUT_C,5);
+distance = (X2/100*95); //mm(0.95 = Experience value for fine-tuning)
+stright_line(distance);
+
+
+//straight 900mm
+SetPower(OUT_A,5);
+SetPower(OUT_C,5);
+distance = (X2/100*95); //mm(0.95 = Experience value for fine-tuning)
+stright_line(distance);
+
+
+//turn right 90 degrees
+SetPower(OUT_A,2);
+SetPower(OUT_C,5);
+turn_right_90();
+
+
+//straight 2(2 - length of body) cross
+SetPower(OUT_A,5);
+SetPower(OUT_C,5);
+distance = Y2; //mm
+stright_line(distance);
+
+
+//arm down
+OnRev(OUT_B);
+Wait(60);
+Off(OUT_B);
+
+
+AddToDatalog(Timer(1));
+}
+
+
+void stright_line(int dis_mm){
+
+int dis;
+
+ClearSensor(SENSOR_1);
+ClearSensor(SENSOR_3);
+	//distance(count) = distance(mm) / (diameter * gear ratio * encoder resolution * (PI/180)) * 0.9
+	//dis = dis_mm/(816/20 * 8/40 * 225/10 * 314/100/180) * 86/100; //count
+	dis = dis_mm * 10 / 32; //count
+  
+	a=0;
+
+	do{
+	if (SENSOR_2 > THRESHOLD)
+	{
+	Float(OUT_A);
+	OnFwd(OUT_C);
+		if (abs(SENSOR_1)<abs(SENSOR_3)){
+		SetPower(OUT_A,5);
+		OnFwd(OUT_A);
+		Float(OUT_C);
+		} else {
+		SetPower(OUT_C,5);
+		OnFwd(OUT_C);
+		Float(OUT_A);
+		}
+	}else{
+	Float(OUT_C);
+	OnFwd(OUT_A);
+		if (abs(SENSOR_1)<abs(SENSOR_3)){
+		SetPower(OUT_A,5);
+		OnFwd(OUT_A);
+		Float(OUT_C);
+		} else {
+		SetPower(OUT_C,5);
+		OnFwd(OUT_C);
+		Float(OUT_A);
+		}
+	}
+	a=(abs(SENSOR_1)+abs(SENSOR_3))/2;
+	}while(a < dis);
+	Off(OUT_A+OUT_C);
+}
+
+
+void turn_right_90(){
+
+ClearSensor(SENSOR_1);
+ClearSensor(SENSOR_3);
+
+a=0;
+SetPower(OUT_A,2);
+SetPower(OUT_C,6);
+	do{
+	a=(abs(SENSOR_1)+abs(SENSOR_3))/2;
+		if(a <=(31 * 30 / 100)){
+		OnFwd(OUT_A);
+		OnRev(OUT_C);
+		}else if(a <=(31 * 85 / 100)){
+		Float(OUT_A);
+		OnRev(OUT_C);
+		}else{
+		Float(OUT_A+OUT_C);
+		}
+	}while( a < 31);
+	Off(OUT_A+OUT_C);
+
+}
+
+
+void turn_left_90(){
+
+ClearSensor(SENSOR_1);
+ClearSensor(SENSOR_3);
+
+a=0;
+SetPower(OUT_A,4);
+SetPower(OUT_C,4);
+	do{
+	a=(abs(SENSOR_1)+abs(SENSOR_3))/2;
+		if(a <= (30 * 50 / 100)){
+		OnRev(OUT_A);
+		OnFwd(OUT_C);
+		}else if(a <=(30 * 85 / 100)){
+		Float(OUT_A);
+		OnFwd(OUT_C);
+		}else{
+		Float(OUT_A+OUT_C);
+		}
+	}while( a < 30);
+	Off(OUT_A+OUT_C);
+}

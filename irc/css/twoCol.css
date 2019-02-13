@@ -1,0 +1,102 @@
+@charset "utf-8";
+/* ==========================
+ * TWO-COLUMN LAYOUT
+ * last-update: 08/11/03
+========================== */
+/*
+ * container
+ */
+#container{
+	width : 100%;
+	position : relative;
+	min-height : 100px;
+	height : auto !important;
+	height : 100px;	/* min-heightのクロスブラウザ対応 */
+	background-color : #eee;
+}
+#clearance{
+	width : 100%;
+	height : 60px;
+	position : relative;
+	/*background-image : url(../img/index_visual_background2.jpg);*/
+	background-position : left top;
+	background-color : #ccc;
+	background-repeat : no-repeat;
+}
+#side_bar{
+	width : 12em;
+	float : left;
+}
+#main_content{
+	min-height : 300px;
+	height : auto !important;
+	height : 300px;	/* min-heightのクロスブラウザ対応 */
+	margin: 0 2em 0 14em; /* 右マージンは、パーセントまたはピクセル
+	で設定できます。これにより、ページの右側にスペースが設定されます。 */
+} 
+.content{
+	min-height : 150px;
+	height : auto !important;
+	height : 150px;	/* min-heightのクロスブラウザ対応 */
+	position : relative;
+	top : -50px;
+	padding-bottom : 1em;
+	background-image : url(../img/common_content_bg.png);
+	background-position : bottom;
+	background-repeat : repeat-x;
+	font-size : 10pt;
+}
+.content_title{
+	width : 100%;
+	height : 50px;
+	position : relative;
+	background-image : url(../img/index_contents_bar.png);
+	background-repeat : repeat-x;
+	background-color : #fff;
+	filter	: alpha(opacity=80);
+	-moz-opacity : 0.8;
+	opacity	: 0.8;
+}
+.content_title h2{
+	position : absolute;
+	bottom : 10px;
+	left : 10px;
+	font-size : 10pt;
+}
+.content_text{
+	width : 100%;
+	background-color : #fff;
+	font-family : Arial, Helvetica, sans-serif, "ＭＳ Ｐゴシック", "Osaka";
+	font-size : 10pt;
+	color : #333;
+	padding-top : 1em;
+}
+#main_content .content_text{
+	width : 100%;
+	min-height : 300px;
+	height : auto !important;
+	height : 300px; /* min-heightのクロスブラウザ対応 */
+	line-height : 2.0em;
+	margin : 0 auto 2em auto;
+}
+#side_bar .content_text{
+	width : 100%;
+	line-height : 1.5em;
+	margin : 0 auto 1em auto;
+}
+div#side_bar ul{
+    clear: both;
+	position : relative;
+    list-style-type: none;
+    position: relative;
+}
+div#side_bar ul li{
+	z-index : 200;
+	position : relative;
+    line-height: 2.0;
+	margin : 0 0 0 0;
+}
+div#side_bar ul li a{
+	color : #333;
+	font-size : 9pt;
+}

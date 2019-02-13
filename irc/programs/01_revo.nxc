@@ -1,0 +1,443 @@
+int startTime;
+int endTime;
+int totalTime;
+//黒線から超えるときの座標 [mm]
+//(2000,0)を基準に考える
+//超えないときは0
+#define OVERX 0
+#define OVERY 0
+//オブジェクトまでのマス数
+#define OX 6
+#define OY 3
+//ゴールまでのマス数
+#define GX 0
+#define GY 0
+
+//1ブロック進む時のタイヤ角度 [deg]
+#define LX 415
+#define LY 415
+//ライトセンサーとアームの距離
+//(タイヤが回転する角度) [deg]
+#define AD 250
+
+//最大の力
+#define MAX 100
+//ライントレースするときの力
+#define MINpow 30
+#define MAXpow 85
+//回転するときの力
+#define REVpow 40
+//アーム開閉力
+#define ARMpow 30
+
+//time
+#define CATCHtime 500
+
+//sensor
+#define THRESHOLD 40
+
+//turn angle
+#define TA 60
+#define TA2 150
+//slowdown 
+#define DAD 100
+//フィールドのマス数
+#define FGX 10
+#define FGY 4
+
+int SV;
+int a, b, c;
+int rb, rc, ra;
+int x1, x2, x1_2;
+int y1, y2;
+int k, i;
+int DY1, DX1, DY2, DX2;
+int hp, blp, wlp, b0, c0;
+
+sub Trapezoida()
+{
+  if(a >= k - DAD){
+    wlp = MAXpow - (MAXpow - MINpow) * (a - (k - DAD)) / DAD;
+  }else{
+    wlp = MAXpow;
+  }
+  hp = wlp + (MAX - MAXpow);
+  blp = wlp + 0;
+}
+
+sub line_traceR()
+{
+  Trapezoida();
+  SV = SENSOR_3;
+  if (SV < THRESHOLD){		        //white
+    OnFwd(OUT_B,blp);			//turn right
+    OnFwd(OUT_C,hp);
+  }else{				//black
+    OnFwd(OUT_B,hp);			//turn left
+    OnFwd(OUT_C,wlp);
+  }
+  b = MotorRotationCount(OUT_B);
+  c = MotorRotationCount(OUT_C);
+  a = (b + c) / 2;
+}
+
+sub line_traceL()
+{
+  Trapezoida();
+  SV = SENSOR_3;
+  if (SV < THRESHOLD){        		//white
+    OnFwd(OUT_B,hp);			//turn right
+    OnFwd(OUT_C,blp);
+  }else{				//black
+    OnFwd(OUT_B,wlp);			//turn left
+    OnFwd(OUT_C,hp);
+  }
+  b = MotorRotationCount(OUT_B);
+  c = MotorRotationCount(OUT_C);
+  a = (b + c) / 2;
+}
+
+sub turn_right()
+{
+  b0 = MotorRotationCount(OUT_B);
+  while(true){
+    OnRev(OUT_B,MAX);
+    OnFwd(OUT_C,MAX);
+    rb = MotorRotationCount(OUT_B);
+    ra = abs(rb - b0);
+    if(ra > TA)
+      {
+	break;
+      }
+  }
+  while(true){
+    OnRev(OUT_B,REVpow);
+    OnFwd(OUT_C,REVpow);
+    SV = SENSOR_3;
+    if (SV < THRESHOLD){                //black
+      break;
+    }
+  }
+}
+
+sub turn_left()
+{
+  c0 = MotorRotationCount(OUT_C);
+  while(true){
+    OnFwd(OUT_B,MAX);
+    OnRev(OUT_C,MAX);
+    rc = MotorRotationCount(OUT_C);
+    ra = abs(rc - c0);
+    if(ra > TA)
+      {
+	break;
+      }
+  }
+  while(true){
+    OnFwd(OUT_B,REVpow);
+    OnRev(OUT_C,REVpow);
+    SV = SENSOR_3;
+    if (SV < THRESHOLD){                //black
+      break;
+    }
+  }
+}
+
+task main()
+{
+  startTime=CurrentTick();
+  int hy, hy2;
+  DY1 = OY;
+  DX1 = OX;
+  DY2 = abs(GY - OY);
+  DX2 = abs(GX - OX);
+  
+/*
+#########--Object point to goal point(i)--######### 
+
+  y           
+
+  ^         
+  |  ______________________________ _ _ _ _ _    
+  | |        |          |         |          |
+  | | i = 2  |  i = 6   |  i = 4  |  i = 11  |
+  | |________|__________|_________| _ _ _ _ _|
+  | |        |          |         |          |
+  | |        |  Object  |         |          |
+  | | i = 7  |  point   |  i = 8  |  i = 10  |
+  | |        |  i = 9   |         |          |
+  | |________|__________|_________| _ _ _ _ _|
+  | |        |          |         |          |
+  | | i = 1  |  i = 5   |  i = 3  |  i = 12  |
+  | |________|__________|_________| _ _ _ _ _|
+  |---------------------------------------------> x
+ O
+
+###################################################
+*/
+
+  if(GX < OX){
+    if(GY < OY){
+      i = 1;
+    }else if(GY > OY){
+      i = 2;
+    }else{
+      i = 7;
+    }
+  }else if(OX < GX && GX <= FGX){
+    if(GY < OY){
+      i = 3;
+    }else if(GY > OY){
+      i = 4;
+    }else{
+      i = 8;
+    }
+  }else if(OX == GX){
+    if(GY < OY){
+      i = 5;
+    }else if(GY > OY){
+      i = 6;
+    }else{
+      i = 9;
+    }
+  }
+  if(OVERX != 0){
+    i = 10;
+  }
+  
+  
+  y1 = LY * DY1;
+  x1 = y1 + LX * DX1 - AD;
+  x1_2 = y1 + LX * DX1;
+  if (i == 1 || i == 2 || i == 7 || i == 8){
+    y2 = x1_2 + LY * DY2;
+    x2 = y2 + LX * DX2 - AD;
+  }else if(i == 3 || i == 4 || i == 5 || i == 6 || i == 10){
+    x2 = x1_2 + LX *DX2;
+    y2 = x2 + LY * DY2 - AD;
+  }
+  
+  SetSensorLight (IN_3);
+  ResetRotationCount(OUT_BC);
+//##################--arm_open--###################
+  OnFwd(OUT_A,ARMpow);
+//#################--straight_y1--#################
+  if (OX != 0){
+    if(OY != 0){
+      k = y1;
+      while(true){
+        line_traceR();
+        if(a >= y1){
+	  break;
+        }
+      }
+    }
+//#################--turn_right--##################
+    turn_right();
+//#############--straight_object_x1--##############
+    k = x1_2;
+    while(true){
+      line_traceR();
+      if(a >= x1){
+        break;
+      }
+    }
+    Off(OUT_BC);
+//#################################################
+  }else{
+    k = y1 - AD;
+    while(true){
+      line_traceR();
+      if(a >= y1 - AD){
+        break;
+      }
+    }
+    Off(OUT_BC);
+  }
+//################--object_catch--#################
+  OnRev(OUT_A,ARMpow);
+  if(OX == 0){
+    k = y1;
+    while(true){
+      line_traceR();
+      if(a >= y1){
+        break;
+      }
+    }
+    turn_right();
+  }
+  if(i == 9 && i != 10){
+    Wait(CATCHtime);
+    Off(OUT_BC);
+  }else{
+//#################--straight_x1--#################
+    k = x1_2;
+    while(true){
+      line_traceR();
+      if(a >= x1_2){
+        break;
+      }
+    }
+  }
+  if(i == 1 || i == 2 || i == 5 || i == 6 && i != 10){
+//#################--turn_right--##################
+    if (i == 1 || i == 5){
+      turn_right();
+    }else if(i == 2 || i == 6){
+      turn_left();
+    }
+//################--straight_y2--##################
+    if(OY == 4 && GY == 4){
+    }else{
+      k = y2;
+      while(true){
+  	if(i == 1 || i == 5){
+          line_traceR();
+	}else if(i == 2 || i == 6){
+          line_traceL();
+	}
+   	if(a >= y2){
+    	break;
+	}
+      }
+    }
+  }
+  if(i == 1 || i == 2 && i != 10){
+//##################--turn_left--##################
+    if (i == 1){
+      turn_right();
+    }
+    if(i == 2){
+      turn_left();
+    }
+//#################--straight_x2--#################
+    k = x2;
+    while(true){
+      if(i == 1){
+        line_traceR();
+      }else if(i == 2){
+        line_traceL();
+      }
+      if(a >= x2){
+        break;
+      }
+    }
+  }  
+//###################--turn_180--##################
+  if(i == 7 && i != 10){
+    if(OY == 0){
+      turn_left();
+      turn_left();
+    }else{
+      turn_right();
+      turn_right();
+    }
+  }
+  if(i == 3 || i == 4 || i == 7 || i == 8 || i == 10){
+//#################--straight_x2--#################
+    k = x2;
+    while(true){
+      line_traceR();
+      if(a >= x2){
+        break;
+      }
+    }
+  }
+  if(i == 3 || i == 4 && i != 10){
+//#################--turn_right--##################
+    if (i == 3){
+      turn_right();
+    }else if(i == 4){
+      turn_left();
+    }
+//################--straight_y2--##################
+    k = y2;
+    while(true){
+      if(i == 3){
+        line_traceR();
+      }else if(i == 4){
+        line_traceL();
+      }
+      if(a >= y2){
+        break;
+      }
+    }
+  }
+//##########--goal point x > 2000[mm]--############  
+  if(i == 10){
+    hy = abs(OVERY - (OY * 200));
+//#######--Goal point y > Object point y--#########    
+    if(OY * 200 < OVERY){
+      turn_left();
+      i = 11;
+//#######--Goal point y < Object point y--#########    
+    }else if(OY * 200 > OVERY){
+      turn_right();
+      i = 12;
+    }
+    if(i == 11 || i == 12){
+      k = x2 + (hy * 100 / 46);
+      while(true){
+//#######--Goal point y > Object point y--#########    
+        if(i == 11){
+          line_traceL();
+//#######--Goal point y < Object point y--#########    
+        }else if(i == 12){
+          line_traceR();
+        }
+        if(a >= k){
+          break;
+        }
+      }      
+    }
+//#######--Goal point y > Object point y--#########    
+    if(i == 11){
+      b0 = MotorRotationCount(OUT_B);
+      while(true){
+        OnRev(OUT_B,REVpow);
+        OnFwd(OUT_C,REVpow);
+        rb = MotorRotationCount(OUT_B);
+        ra = abs(rb - b0);
+        if(ra > TA2)
+	  {
+	    break;
+	  }
+      }
+    }
+//#######--Goal point y < Object point y--#########    
+    if(i == 12){
+      c0 = MotorRotationCount(OUT_C);
+      while(true){
+        OnFwd(OUT_B,REVpow);
+        OnRev(OUT_C,REVpow);
+        rc = MotorRotationCount(OUT_C);
+        ra = abs(rc - c0);
+        if(ra > TA2)
+	  {
+	    break;
+	  }
+      }
+    }
+//#######--Goal point y = Object point y--#########    
+    k = x2 + ((hy + OVERX) * 1000000 / 488692) - AD;
+    while(true){
+      OnFwd(OUT_BC,MAX);
+      b = MotorRotationCount(OUT_B);
+      c = MotorRotationCount(OUT_C);
+      a = (b + c) / 2;
+      if(a >= k){
+        Off(OUT_BC);
+        break;
+      }
+    }      
+  }
+  
+//################--object_release--###############
+  Off(OUT_BC);
+  OnFwd(OUT_A,ARMpow);
+  
+  endTime=CurrentTick();
+  totalTime=endTime-startTime;
+  NumOut(0,LCD_LINE1, totalTime);
+  Wait(6000);
+}

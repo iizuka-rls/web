@@ -1,0 +1,15 @@
+@charset "utf-8";
+/* ==========================
+ * For Fancy Zoom
+ * last-update: 08/12/06
+========================== */
+/*
+ * For Fancy box
+ */
+
+div#zoom{
+	z-index : 999;
+}
+#zoom_content{
+	background-color : #fff;
+}

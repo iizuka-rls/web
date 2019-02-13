@@ -1,0 +1,213 @@
+@charset "utf-8";
+/* ==========================
+ * TEAMS
+ * last-update: 08/11/26
+========================== */
+/*
+ * main_content 
+ */
+
+#main_content div.content_text{
+	overflow : hidden;
+}
+
+#main_content div.content_text ul#scroll_window{
+	width : 90%;
+	height : 300px;
+	margin : 10px auto auto auto;
+	overflow : hidden;
+	position : relative;
+	border : solid 1px #ccc;
+}
+
+ul#scroll_window li{
+	width : 100%;
+	height :100%;
+	position : absolute;
+}
+
+ul#scroll_window li{
+	background-position : center top;
+	background-repeat : no-repeat;
+	background-color : #fff;
+}
+
+ul#scroll_window li#team01{
+	background-image : url(../img/teams_scrollwindow_bg_01.jpg);
+}
+
+ul#scroll_window li#team02{
+	background-image : url(../img/teams_scrollwindow_bg_02.jpg);
+}
+
+ul#scroll_window li#team03{
+	background-image : url(../img/teams_scrollwindow_bg_03.jpg);
+	background-position : center bottom;
+}
+
+ul#scroll_window li#team04{
+	background-image : url(../img/teams_scrollwindow_bg_04.jpg);
+}
+
+ul#scroll_window li#team05{
+	background-image : url(../img/teams_scrollwindow_bg_05.jpg);
+}
+
+ul#scroll_window li#team06{
+	background-image : url(../img/teams_scrollwindow_bg_06.jpg);
+}
+
+ul#scroll_window li#team07{
+	background-image : url(../img/teams_scrollwindow_bg_07.jpg);
+}
+
+ul#scroll_window li#team08{
+	background-image : url(../img/teams_scrollwindow_bg_08.jpg);
+}
+
+ul#scroll_window li#team09{
+	background-image : url(../img/teams_scrollwindow_bg_09.jpg);
+}
+
+ul#scroll_window li#team10{
+	background-image : url(../img/teams_scrollwindow_bg_10.jpg);
+}
+
+ul#scroll_window li div.team_name{
+	width : auto;
+	height : 100px;
+	position : absolute;
+	top : 0px;
+	left : 110px;
+	z-index : 1;
+}
+
+ul#scroll_window li div.team_name h3{
+	font-size : 26pt;
+	line-height : normal;
+	color : #333;
+	font-family : Impact;
+}
+
+ul#scroll_window li div.member_name{
+	display : block;
+	width : auto;
+	height : 100px;
+	position : absolute;
+	top : 0px;
+	right : 10px;
+	z-index : 3;
+}
+ul#scroll_window li div.member_name span{
+	line-height : 20pt;
+	font-size : 11pt;
+	color : #333;
+	font-weight : bold;
+	font-family : "ＭＳ Ｐゴシック", Arial, Helvetica, sans-serif;
+}
+
+ul#scroll_window li img.member{
+	width : 400px;
+	height : 300px;
+	position : absolute;
+	right : 30px;
+	bottom : 0px;
+}
+
+ul#scroll_window li img.memberSofia{
+	width : 400px;
+	height : 300px;
+	position : absolute;
+	right : 0px;
+	bottom : 0px;
+}
+
+ul#scroll_window li div.medal{
+	display : block;
+	width : 200px;
+	height : 200px;
+	position : absolute;
+	bottom : 0px;
+	right : 0px;
+	z-index : 3;
+}
+
+div.btns{
+	display : block;
+	position : absolute;
+	left : 0px;
+	z-index : 1;
+	width : 250px;
+	height : 300px;
+	background-image : url(../img/teams_btns_bg.png);
+	background-position : left top;
+	background-repeat : no-repeat;
+}
+div.btns a img{
+	position : absolute;
+	width : 131px;
+	height : 114px;
+	z-index : 1;
+}
+
+div.btns a img.btn_robot{
+	top : 10px;
+	left : 10px;
+}
+
+div.btns a img.btn_program{
+	top : 177px;
+	left : 104px;
+	/*IE7以下全てのIEに適用されるCSSハック*/
+	*top : 177px;
+	*left : 105px;
+}
+
+div.btns span{
+	font-size : 11pt;
+	color : #000;
+}
+
+/*
+ * side_bar 
+ */
+ul.content_text, ul.content_text li ul.teams{
+	margin : 0;
+	padding : 0;
+}
+
+ul.content_text li{
+	background-image : url(../img/teams_sidebar_bg.png);
+	background-position : center top;
+	background-repeat : no-repeat;
+	background-color : #666;
+}
+
+ul.content_text li a img{
+	clear : both;
+	margin : 0 3em 0 auto;
+	float : right;
+}
+
+ul.content_text li ul.teams li{
+	background-color : #fff;
+	border-top :solid 1px #ccc;
+	background-image : none;
+	padding-left : 1em;
+}
+
+ul.content_text li a{
+	width : 100%;
+	height : 40px;
+	display : block;
+	line-height : 40px;
+	font-size : 14pt;
+}
+
+/*
+ * For Fancy box
+ */
+
+div#zoom{
+	z-index : 999;
+}

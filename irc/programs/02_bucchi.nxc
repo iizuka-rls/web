@@ -1,0 +1,232 @@
+#define THRESHOLD 40
+#define a 4   //Y
+#define b 2    //X
+#define X 2200
+#define Y 400
+#define back 0   //-200
+
+int x;
+int y;
+int z;
+int LX,LY;
+int L1,L2,L3,L4;
+int startTime;
+int endTime;
+int totalTime;
+
+
+task main()
+{ 
+ startTime = CurrentTick();
+ LX=(X*415)/200;
+ LY=(Y*415)/200;
+
+ L1=415*a-40;
+ L2=415*b;
+ 
+ ResetRotationCount (OUT_BC);
+ SetSensorLight(IN_3);
+ x=0;
+ y=0;
+ z=0;
+
+
+//#####line trace#####
+
+ while(z < L1){
+ 	 x = MotorRotationCount(OUT_B);
+	 y = MotorRotationCount(OUT_C);
+	 z = (x + y)/2; 
+	 if(SENSOR_3 < THRESHOLD){
+	 	     OnFwd(OUT_B,85);
+		     OnFwd(OUT_C,100);
+	 }else{
+		     OnFwd(OUT_C,85);
+		     OnFwd(OUT_B,100);
+  	 }
+ }
+ Off(OUT_BC);
+ if(b==0){
+	OnFwd(OUT_A,60);
+ }
+
+//#####rotate 90#####
+
+ OnFwd(OUT_C,80);
+ OnRev(OUT_B,80);
+ Wait(250);
+ while(true){
+	OnFwd(OUT_C,20);
+ 	OnRev(OUT_B,20);
+ 	if(SENSOR_3 < THRESHOLD){
+   		    break;
+ 	}
+ }
+ OnRev(OUT_C,100);
+ OnFwd(OUT_B,100);
+
+/*
+ ResetRotationCount (OUT_BC);
+ z=0;
+
+ while(z<180){
+	x = MotorRotationCount(OUT_B);
+ 	y = MotorRotationCount(OUT_C);
+ 	z = (- x + y)/2;
+ 	OnFwd(OUT_C,40);
+ 	OnRev(OUT_B,40);
+ }
+*/
+ 
+//RotateMotor(OUT_B, 60, -360); 
+//Wait(600);
+
+
+//#####line trace & arm#####
+ 
+ while(z < L2+L1){
+ 	 x = MotorRotationCount(OUT_B);
+ 	 y = MotorRotationCount(OUT_C);
+ 	 z = (x + y)/2; 
+ 	 if(SENSOR_3 < THRESHOLD)
+  	 {
+		OnFwd(OUT_B,100);
+		OnFwd(OUT_C,85);
+   	 }else{
+		OnFwd(OUT_C,100);
+		OnFwd(OUT_B,85);
+  	 }
+ }	 
+ OnFwd(OUT_A,60);
+
+//#####straight line X#####
+
+ if(LX>=L2){
+	L3=LX+L1;
+	if(LY-40==L1){
+		L3=L3-250;
+	}
+
+	while(z < L3 && z < 4150+L1 ){
+		x = MotorRotationCount(OUT_B);
+		y = MotorRotationCount(OUT_C);
+		z = (x + y)/2; 
+		if(SENSOR_3 < THRESHOLD){
+			    OnFwd(OUT_B,100);
+			    OnFwd(OUT_C,85);
+   		}else{
+			    OnFwd(OUT_C,100);
+			    OnFwd(OUT_B,85);
+  		}
+	}
+ 
+	while(z < L3){
+		x = MotorRotationCount(OUT_B);
+  	 	y = MotorRotationCount(OUT_C);
+  		z = (x + y)/2; 
+
+		OnFwd(OUT_BC,100);
+	}
+ }else{
+	OnFwd(OUT_C,80);
+	OnRev(OUT_B,70);
+	Wait(600);
+	while(true){
+		OnFwd(OUT_C,30);
+ 		OnRev(OUT_B,30);
+		if(SENSOR_3 < THRESHOLD){
+			     break;
+		}
+	}
+ 	OnRev(OUT_C,100);
+ 	OnFwd(OUT_B,100);
+
+	L3=(L2-LX)+L2+L1;
+	if(LY-40==L1){
+		L3=L3-250;
+	}
+
+	while(z < L3 && z < L2+L2+L1 ){
+ 		x = MotorRotationCount(OUT_B);
+ 		y = MotorRotationCount(OUT_C);
+ 		z = (x + y)/2; 
+		if(SENSOR_3 < THRESHOLD){
+			    OnFwd(OUT_B,100);
+			    OnFwd(OUT_C,85);
+   		}else{
+			    OnFwd(OUT_C,100);
+			    OnFwd(OUT_B,85);
+  		}
+	}
+ 
+	while(z < L3){
+		x = MotorRotationCount(OUT_B);
+  	 	y = MotorRotationCount(OUT_C);
+  		z = (x + y)/2; 
+
+		OnFwd(OUT_B,100);
+  		OnFwd(OUT_C,100);
+	}
+ }
+
+ Off(OUT_B);
+ Off(OUT_C);
+
+
+//#####rotate2 90#####
+ 
+ if(LY-40==L1 && LX!=L2){
+ }else if(LY-40==L1 && LX==L2 ){
+       while(z > L1+L2-250){
+        	x = MotorRotationCount(OUT_B);
+ 		y = MotorRotationCount(OUT_C);
+ 		z = (x + y)/2;
+		OnRev(OUT_BC, 100);
+		}
+       
+ }else if(LY>L1 && LX>=L2){
+       L4=LY+LX;
+       RotateMotorEx(OUT_BC, 60, 270, -100, true, true); 
+
+ }else if(LY<L1 && LX<L2){
+       L4=(L1-LY)+L1+L2+(L2-LX);
+       RotateMotorEx(OUT_BC, 60, 255, -100, true, true); 
+
+ }else if(LY<L1 && LX>=L2){
+       L4=(L1-LY)+LX+L1;
+       RotateMotorEx(OUT_BC, 60, 265, 100, true, true); 
+
+ }else if(LY>L1 && LX<L2){
+       L4=L2+L2-LX+LY;
+       RotateMotorEx(OUT_BC, 60, 260, 100, true, true); 
+ }
+
+
+//#####straight line X#####
+
+ while(z < L4-250){
+ 	x = MotorRotationCount(OUT_B);
+  	y = MotorRotationCount(OUT_C);
+  	z = (x + y)/2; 
+ 
+	OnFwd(OUT_B,100);
+  	OnFwd(OUT_C,100);
+ }      
+
+ Off(OUT_B);
+ Off(OUT_C);
+
+
+//#####arm##########
+
+ Off(OUT_BC);
+ OnRev(OUT_A,10);
+
+
+ endTime = CurrentTick();
+ totalTime = endTime - startTime;
+ NumOut(0,LCD_LINE1,totalTime);
+ Wait(8000);
+ Off(OUT_ABC);
+}
+

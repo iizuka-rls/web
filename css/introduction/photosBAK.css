@@ -1,0 +1,306 @@
+/* height of both side bar */
+#middle_back_left, #middle_back_right{
+	height:6000px;
+}
+
+.year{	
+ padding:2px;
+ margin:5px;
+ width:100px;
+ /*height:30px;*/
+ text-align:center;
+ font-size:25px;
+ background-color:#CCCCCC;
+ font-family:Georgia, "Times New Roman", Times, serif;
+	}
+
+.img{
+	padding:3px;
+	float:left;
+}
+
+#photo_content{
+	
+	width:890px;
+	text-align:center;
+}
+
+#photo_wrap{
+	width:848px;
+}
+
+/* layout image énÇ‹ÇË */
+/* ------------------------------------------------------------------ */
+#left{
+	width:20px;
+	height:auto;
+	margin:0;
+	float:left;
+	display:inline;
+	background-color:#FFF;
+}
+
+#Middle_left{
+	background-image:url(../../img/layout/Middle_left.png);
+	background-color:#FFF;
+	background-repeat:no-repeat;
+	margin-left:0px;
+	margin-top:0px;
+	width:20px;
+	height:350px;
+	margin-bottom:0px;
+	float:left;
+	display:inline;
+}
+
+#middle_back_left{
+	background-image:url(../../img/layout/middle_back_left.png);
+	background-repeat:repeat-y;
+	float:left;
+	width:20px;
+	height: 8700px;
+	display:inline;
+}
+
+#right{
+	width:20px;
+	margin:0;
+	height:auto;
+	float:left;
+	display:inline;
+	background-color:#FFF;
+}
+
+#Middle_right{
+	background-image:url(../../img/layout/Middle_right.png);
+	background-repeat:no-repeat;
+	width:20px;
+	height:350px;
+	margin-bottom:0px;
+	float:left;
+	display:inline;
+}
+
+#middle_back_right{
+	background-image:url(../../img/layout/middle_back_right.png);
+	background-repeat:repeat-y;
+	float:left;
+	width:20px;
+	height: 8700px;
+	display:inline;
+}
+/* ------------------------------------------------------------------ */
+/* layout image èIÇÌÇË */
+
+#content{
+	background-color:#FFF;
+	width:890px;
+	height:auto;
+	float:left;
+	margin:auto;
+	overflow:visible;
+	display:inline;
+	text-align:center;
+	}
+
+
+
+#Introduction {
+	background-image:url(file:///C|/Users/takahashi/Desktop/WEB_rayout_image/Introduction.png);
+	margin-left:0px;
+	margin-top:0px;
+	width:112px;
+	height:35px;
+	margin-bottom:0px;
+	float:left;
+	display:inline;
+	text-indent: -1000px;
+
+}
+
+a#Introduction {
+	background-image:url(../../img/layout/Introduction.png);
+	margin-left:0px;
+	margin-top:0px;
+	width:112px;
+	height:35px;
+	margin-bottom:0px;
+	float:left;
+	display:inline;
+	overflow:hidden;
+	outline:none;	
+
+}
+
+#Groups {
+	background-image: url(../../img/layout/hover_Research.png);
+	background-position:top right;
+	background-repeat:no-repeat;
+	margin-left:0px;
+	margin-top:0px;
+	width:110px;
+	height:35px;
+	margin-bottom:0px;
+	float:left;
+	display:block;
+	text-indent: -2000px;
+
+}
+
+a#Groups {
+	background-image: url(../../img/layout/hover_Research.png);
+	background-position:top right;
+	background-repeat:no-repeat;
+	margin-left:0px;
+	margin-top:0px;
+	width:110px;
+	height:35px;
+	margin-bottom:0px;
+	float:left;
+	display: block;
+	overflow:hidden;
+	outline:none;	
+}
+
+a#Groups:hover{
+	background-position: top left;
+	overflow:hidden;
+	outline:none;	
+}
+
+#Papers {
+	background-image: url(../../img/layout/hover_Papers.png);
+	background-position:top right;
+	background-repeat:no-repeat;
+	margin-left:0px;
+	margin-top:0px;
+	width:110px;
+	height:35px;
+	margin-bottom:0px;
+	float:left;
+	display:inline;
+	text-indent: -2000px;
+	overflow:hidden;
+	outline:none;	
+
+}
+
+a#Papers {
+	background-image: url(../../img/layout/hover_Papers.png);
+	background-position:top right;
+	background-repeat:no-repeat;
+	margin-left:0px;
+	margin-top:0px;
+	width:110px;
+	height:35px;
+	margin-bottom:0px;
+	float:left;
+	display:inline;
+	overflow:hidden;
+	outline:none;	
+
+}
+
+a#Papers:hover{
+	background-position: top left;
+	overflow:hidden;
+	outline:none;	
+}
+
+#Members {
+	background-image:url(../../img/layout/hover_Members.png);
+	background-position:top right;
+	background-repeat:no-repeat;
+	margin-left:0px;
+	margin-top:0px;
+	width:108px;
+	height:35px;
+	margin-bottom:0px;
+	float:left;
+	display:inline;
+	text-indent: -1000px;
+}
+
+a#Members {
+	background-image:url(../../img/layout/hover_Members.png);
+	background-position:top right;
+	background-repeat:no-repeat;
+	margin-left:0px;
+	margin-top:0px;
+	width:108px;
+	height:35px;
+	margin-bottom:0px;
+	float:left;
+	display:inline;
+	overflow:hidden;
+	outline:none;	
+}
+
+a#Members:hover{
+	background-position: top left;
+	overflow:hidden;
+	outline:none;	
+}
+
+#Schedule{
+	background-image: url(../../img/layout/hover_Schedule.png);
+	background-position:top right;
+	background-repeat:no-repeat;
+	margin-left:0px;
+	margin-top:0px;
+	width:112px;
+	height:35px;
+	margin-bottom:0px;
+	float:left;
+	display:inline;
+	text-indent: -2000px;
+
+}
+
+a#Schedule{
+	background-image: url(../../img/layout/hover_Schedule.png);
+	background-position:top right;
+	background-repeat:no-repeat;
+	margin-left:0px;
+	margin-top:0px;
+	width:112px;
+	height:35px;
+	margin-bottom:0px;
+	float:left;
+	display:inline;
+	overflow:hidden;
+	outline:none;	
+
+}
+
+
+a#Schedule:hover{
+	background-position: top left;
+	overflow:hidden;
+	outline:none;	
+}
+
+
+#oldPhotoButton1{
+	float:left;
+	margin-left:35px;
+	margin-top:20px;
+	width:120px;
+	height:20px;
+	}
+
+a#oldPhotoButton{
+	background-image:url(../../img/layout/oldPhotosButton.png);
+	width:120px;
+	height:40px;
+	float:right;
+	text-indent:-2000px;
+	overflow:hidden;
+	outline:none;
+	}	
+
+a#oldPhotoButton:hover{
+	background-position:top right;
+	overflow:hidden;
+	outline:none;
+	}

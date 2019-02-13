@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<gallery cellDimension="800" columns="4" zoomOutPerc="20" zoomInPerc="120" frameWidth="10" frameColor="0xFFFFFF" captionColor="0xFFFFFF" enableRightClickOpen="true">
+	<image>
+		<url>img/photos/2007/pre/photos2007_pre_001.jpg</url>
+		<caption></caption>
+	</image>
+	<image>
+		<url>img/photos/2007/pre/photos2007_pre_002.jpg</url>
+		<caption></caption>
+	</image>
+	<image>
+		<url>img/photos/2007/pre/photos2007_pre_003.jpg</url>
+		<caption></caption>
+	</image>
+	<image>
+		<url>img/photos/2007/pre/photos2007_pre_004.jpg</url>
+		<caption></caption>
+	</image>
+	<image>
+		<url>img/photos/2007/pre/photos2007_pre_005.jpg</url>
+		<caption></caption>
+	</image>
+	<image>
+		<url>img/photos/2007/pre/photos2007_pre_006.jpg</url>
+		<caption></caption>
+	</image>
+</gallery>

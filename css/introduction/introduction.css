@@ -1,0 +1,586 @@
+#Middle_left{
+	background-image:url(../../img/layout/Middle_left.png);
+	background-color:#FFF;
+	background-repeat:no-repeat;
+	margin-left:0px;
+	margin-top:0px;
+	width:20px;
+	height:350px;
+	margin-bottom:0px;
+	float:left;
+	display:inline;
+
+}
+
+#Middle_right{
+	background-image:url(../../img/layout/Middle_right.png);
+	margin-left:0px;
+	margin-top:0px;
+	width:20px;
+	height:350px;
+	margin-bottom:0px;
+	float:left;
+	display:inline;
+}
+
+#content1{
+	background-color:#FFF;
+	width:890px;
+	height:350px;
+	float:left;
+	margin:auto;
+	overflow:visible;
+	}
+
+#content2{
+	background-color:#FFF;
+	width:890px;
+	height:270px;
+	float:left;
+	
+	}
+
+/*#middle_back {
+	background-image:url(../WEB_rayout_image/WEBmookup_r6_c2.png);
+	margin-left:0px;
+	margin-top:0px;
+	width:930px;
+	height:270px;
+	margin-bottom:0px;
+	float:left;
+	display:inline;
+
+}*/
+
+#middle_back_left{
+	background-image:url(../../img/layout/middle_back_left.png);
+	background-repeat:repeat-y;
+	float:left;
+	width:20px;
+	height:270px;
+	}
+
+#middle_back_right{
+	background-image:url(../../img/layout/middle_back_right.png);
+	background-repeat:repeat-y;
+	float:left;
+	width:20px;
+	height:270px;
+	}
+	
+
+topic_box{
+	
+	}
+	
+.topic_category{
+	float:left;
+	
+	}	
+
+.topic_category_new{
+	float:left;
+	color:#F60;
+	
+	}
+	
+.topic_category_old{
+	float:left;
+	color:#FFF;
+	
+	}	
+
+.topic_date{
+	float:left;
+	margin-left:24px;
+	
+	}
+	
+.topic_content{
+	text-decoration:none;
+	float:left;
+	margin-left:10px;
+	width:385px;
+	height:auto;
+	font-family:Verdana, Geneva, sans-serif"‚l‚r ‚oƒSƒVƒbƒN", "MS PGothic", sans-serif
+	}
+		
+/*.topic_content a:link{
+	color:#000;
+	text-decoration:underline;
+	
+	}*/	
+	
+.topic_content a:hover{
+	color:#F60;
+	text-decoration:underline;
+	
+	}	
+	
+a.high_light{
+	color:#F00;
+	}	
+
+/*.high_light a{
+	/*font-weight:bold;
+	
+	}*/
+	
+#Introduction {
+	background-image:url(../../img/layout/Introduction.png);
+	background-position:top right;
+	background-repeat:no-repeat;
+	margin-left:0px;
+	margin-top:0px;
+	width:112px;
+	height:35px;
+	margin-bottom:0px;
+	float:left;
+	display:inline;
+	text-indent: -1000px;
+
+}
+
+a#Introduction {
+	background-image:url(../../img/layout/Introduction.png);
+	background-position:top right;
+	background-repeat:no-repeat;
+	margin-left:0px;
+	margin-top:0px;
+	width:112px;
+	height:35px;
+	margin-bottom:0px;
+	float:left;
+	display:inline;
+	overflow:hidden;
+	outline:none;	
+
+}
+
+#Groups {
+	background-image: url(../../img/layout/hover_Research.png);
+	background-position:top right;
+	background-repeat:no-repeat;
+	margin-left:0px;
+	margin-top:0px;
+	width:110px;
+	height:35px;
+	margin-bottom:0px;
+	float:left;
+	display:block;
+	text-indent: -2000px;
+
+}
+
+a#Groups {
+	background-image: url(../../img/layout/hover_Research.png);
+	background-position:top right;
+	background-repeat:no-repeat;
+	margin-left:0px;
+	margin-top:0px;
+	width:110px;
+	height:35px;
+	margin-bottom:0px;
+	float:left;
+	display: block;
+	overflow:hidden;
+	outline:none;	
+}
+
+a#Groups:hover{
+	background-position: top left;
+	overflow:hidden;
+	outline:none;	
+}
+
+#Papers {
+	background-image: url(../../img/layout/hover_Papers.png);
+	background-position:top right;
+	background-repeat:no-repeat;
+	margin-left:0px;
+	margin-top:0px;
+	width:110px;
+	height:35px;
+	margin-bottom:0px;
+	float:left;
+	display:inline;
+	text-indent: -2000px;
+	overflow:hidden;
+	outline:none;	
+
+}
+
+a#Papers {
+	background-image: url(../../img/layout/hover_Papers.png);
+	background-position:top right;
+	background-repeat:no-repeat;
+	margin-left:0px;
+	margin-top:0px;
+	width:110px;
+	height:35px;
+	margin-bottom:0px;
+	float:left;
+	display:inline;
+	overflow:hidden;
+	outline:none;	
+
+}
+
+a#Papers:hover{
+	background-position: top left;
+	overflow:hidden;
+	outline:none;	
+}
+
+#Members {
+	background-image:url(../../img/layout/hover_Members.png);
+	background-position:top right;
+	background-repeat:no-repeat;
+	margin-left:0px;
+	margin-top:0px;
+	width:108px;
+	height:35px;
+	margin-bottom:0px;
+	float:left;
+	display:inline;
+	text-indent: -1000px;
+}
+
+a#Members {
+	background-image:url(../../img/layout/hover_Members.png);
+	background-position:top right;
+	background-repeat:no-repeat;
+	margin-left:0px;
+	margin-top:0px;
+	width:108px;
+	height:35px;
+	margin-bottom:0px;
+	float:left;
+	display:inline;
+	overflow:hidden;
+	outline:none;	
+}
+
+a#Members:hover{
+	background-position: top left;
+	overflow:hidden;
+	outline:none;	
+}
+
+#Schedule{
+	background-image: url(../../img/layout/hover_Schedule.png);
+	background-position:top right;
+	background-repeat:no-repeat;
+	margin-left:0px;
+	margin-top:0px;
+	width:112px;
+	height:35px;
+	margin-bottom:0px;
+	float:left;
+	display:inline;
+	text-indent: -2000px;
+
+}
+
+a#Schedule{
+	background-image: url(../../img/layout/hover_Schedule.png);
+	background-position:top right;
+	background-repeat:no-repeat;
+	margin-left:0px;
+	margin-top:0px;
+	width:112px;
+	height:35px;
+	margin-bottom:0px;
+	float:left;
+	display:inline;
+	overflow:hidden;
+	outline:none;	
+
+}
+
+
+a#Schedule:hover{
+	background-position: top left;
+	overflow:hidden;
+	outline:none;	
+}
+
+#topic{
+	width:505px;
+	height:270px;
+	float:left;
+	/*margin-top:30px;*/
+	margin-left:45px;
+	}
+
+#topic_title{
+	width:115px;
+	height:24px;
+	float:left;
+	padding-left:1px;
+	}
+
+#accent{
+	width:29px;
+	height:24px;
+	float:left;
+	}
+
+#rss_icon{
+	width:24px;
+	height:24px;
+	float:right;
+	margin-right:0px;}
+
+#topic_bar{
+	width:505px;
+	height:10px;
+	float:left;
+	background-color:#00C;
+	
+	}
+
+#topic_content{
+	/*background-color:#CCC;*/
+	width:505px;
+	height:198px;
+	float:left;
+	overflow:hidden;
+	font-size:13px;
+	line-height:25px;
+	
+	}
+
+#topic_readmore{
+	text-align:right;
+	width:70px;
+	padding:5px;
+	height:12px;
+	float:right;
+	
+	}
+
+#topic_readmore a:hover{
+	color:#F90;
+}
+
+#Aboutus_box{
+	width:280px;
+	height:110px;
+	float:left;
+	padding-left:15px;
+	/*margin-top:30px;*/
+	
+	}
+
+#Aboutus_title{
+	width:70px;
+	height:24px;
+	float:left
+	}
+	
+#Aboutus_accent{
+	width:30px;
+	height:24px;
+	float:left;
+	margin-left:3px;
+	}	
+
+#Aboutus_bar{
+	width:280px;
+	height:10px;
+	float:left;
+	
+	
+	}
+	
+#Aboutus_content{
+	width:280px;
+	height:61px;
+	float:left;
+	font-family:verdana;
+	font-size:13px;
+	line-height:20px;
+	
+	
+	
+	}
+	
+#Aboutus_readmore{
+	text-align:right;
+	margin-right:10px;
+	float:right;
+	width:80px;
+	height:15px;
+	}
+	
+#Aboutus_readmore a:hover{
+	color:#F90;
+}
+	
+
+#Photo_box{
+	width:280px;
+	height:110px;
+	float:left;
+	padding-left:15px;
+	padding-top:10px;
+	
+	}
+
+#Photo_title{
+	width:53px;
+	height:24px;
+	float:left
+	}
+	
+#Photo_accent{
+	width:30px;
+	height:24px;
+	float:left;
+	
+	}	
+
+#Photo_bar{
+	width:280px;
+	height:10px;
+	float:left;
+	
+	
+	}
+	
+#Photo_content{
+	width:280px;
+	height:76px;
+	float:left;
+	
+	}	
+
+.button {
+    /*padding: 4px 10px 3px 25px;*/
+    position: relative;
+	cursor:default;
+    display: inline-block;
+	/*background-image:url(../img/introduction/accent.png);*/
+    /*background-repeat: repeat-x;*/
+    font-size: 11px;
+    height: 16px;
+    text-decoration: none;
+    color: #40740D;
+    -moz-border-radius-bottomleft: 5px;
+    -moz-border-radius-bottomright: 5px;
+    -moz-border-radius-topleft: 5px;
+    -moz-border-radius-topright: 5px;
+}
+.button img {
+    position: absolute;
+    top: -4px;
+    /*left: -12px;*/
+    border: none;
+}
+.button:hover {
+    color: #8AB134;
+}  
+
+.button2 {
+    /*padding: 4px 10px 3px 25px;*/
+    position: relative;
+	cursor:default;
+    display: inline-block;
+	/*background-image:url(../img/introduction/accent.png);*/
+    /*background-repeat: repeat-x;*/
+    font-size: 11px;
+    height: 16px;
+    text-decoration: none;
+    color: #40740D;
+    -moz-border-radius-bottomleft: 5px;
+    -moz-border-radius-bottomright: 5px;
+    -moz-border-radius-topleft: 5px;
+    -moz-border-radius-topright: 5px;
+}
+.button2 img {
+    position: absolute;
+    top: -4px;
+    /*left: -12px;*/
+    border: none;
+}
+.button2:hover {
+    color: #8AB134;
+}
+
+.button3 {
+    /*padding: 4px 10px 3px 25px;*/
+    position: relative;
+	cursor:default;
+    display: inline-block;
+	/*background-image:url(../img/introduction/accent.png);*/
+    /*background-repeat: repeat-x;*/
+    font-size: 11px;
+    height: 16px;
+    text-decoration: none;
+    color: #40740D;
+    -moz-border-radius-bottomleft: 5px;
+    -moz-border-radius-bottomright: 5px;
+    -moz-border-radius-topleft: 5px;
+    -moz-border-radius-topright: 5px;
+}
+.button3 img {
+    position: absolute;
+    top: -4px;
+    /*left: -12px;*/
+    border: none;
+}
+.button3:hover {
+    color: #8AB134;
+}
+
+#img{
+	margin:auto;
+	width:800px;
+	height:330px;
+	overflow:hidden;
+	}
+
+/*  
+    root element for the scrollable.  
+    when scrolling occurs this element stays still.  
+*/ 
+div.scrollable { 
+     
+    /* required settings */ 
+    position:relative; 
+	margin-top:5px;
+    overflow:hidden;          
+    width: 270px;/*660px;*/     
+    height:90px;/*90px;*/     
+} 
+ 
+/*  
+    root element for scrollable items. Must be absolutely positioned 
+    and it should have a super large width to accomodate scrollable items. 
+    it's enough that you set width and height for the root element and 
+    not for this element. 
+*/ 
+div.scrollable div.items {     
+    /* this cannot be too large */ 
+    width:20000em;     
+    position:absolute;         
+} 
+ 
+/*  
+    a single item. must be floated on horizontal scrolling 
+    typically this element is the one that *you* will style 
+    the most. 
+*/ 
+div.scrollable div.items div { 
+    float:left; 
+	background-color:#999;
+	width:90px;
+	height:90px;
+} 
+ 
+/* you may want to setup some decorations to active item */ 
+div.items div.active { 
+    border:1px inset #ccc;         
+    background-color:#fff; 
+}

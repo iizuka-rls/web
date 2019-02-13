@@ -1,0 +1,506 @@
+#left{
+	width:20px;
+	height:1100px;
+	margin:0;
+	float:left;
+	display:inline;
+	background-color:#FFF;
+	
+	}
+
+#Middle_left{
+	background-image:url(../../img/layout/Middle_left.png);
+	background-color:#FFF;
+	background-repeat:no-repeat;
+	margin-left:0px;
+	margin-top:0px;
+	width:20px;
+	height:350px;
+	margin-bottom:0px;
+	float:left;
+	display:inline;
+
+}
+
+#middle_back_left{
+	background-image:url(../../img/layout/middle_back_left.png);
+	background-repeat:repeat-y;
+	float:left;
+	width:20px;
+	height:1060px;
+	display:inline;
+	}
+
+#right{
+	width:20px;
+	margin:0;
+	height:1100px;
+	float:left;
+	display:inline;
+	background-color:#FFF;
+	
+	}
+
+#Middle_right{
+	background-image:url(../../img/layout/Middle_right.png);
+	margin-left:0px;
+	margin-top:0px;
+	width:20px;
+	height:350px;
+	margin-bottom:0px;
+	float:left;
+	display:inline;
+}
+
+#middle_back_right{
+	background-image:url(../../img/layout/middle_back_right.png);
+	background-repeat:repeat-y;
+	float:left;
+	width:20px;
+	height:1060px;
+	display:inline;
+	}
+
+#content{
+	background-color:#FFF;
+	width:890px;
+	height:1410px;
+	float:left;
+	margin:auto;
+	overflow:visible;
+	display:inline;
+	}
+		
+
+h3{	margin: 10px 10px 0 10px; 
+	padding: 0 80px 0 0;
+	color:#FFF;
+	font-family:"Times New Roman", Times, serif;
+	 font-size:24px;
+	/*font:18pt Arial, sans-serif; */
+	letter-spacing:-1px; 
+	font-weight: bold;  
+	}
+	
+	
+			
+.boxgrid{ 
+				width: 600px; 
+				height: 300px; 
+				margin-top:40px;;
+				margin-left:auto;
+				margin-right:auto;
+				background:#161613; 
+				overflow: hidden; 
+				position: relative;
+				color:#FFF;
+}
+
+
+				/*.boxgrid img{ 
+					position: absolute; 
+					top: 0; 
+					left: 0; 
+					border: 0; 
+				}*/
+				.boxgrid p{ 
+					padding: 0 10px; 
+					color:#FFF;
+					font-weight:bold;
+					/*font:"Times New Roman", Times, serif;*/
+					/*font-size:10pt;*/
+					font:10pt "Lucida Grande", Arial, sans-serif; 
+	}
+		
+				
+.boxcaption{ 
+		float: left; 
+		position: absolute;
+		top:260px;
+		background: #000; 
+		height: 100%; 
+		width: 100%;
+		color:#FFF;
+		opacity: .8; 
+		/* For IE 5-7 */
+		filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=80);
+		/* For IE 8 */
+		-MS-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";
+	}
+			
+.captionfull .boxcaption {
+	top: 300;
+	left: 0;
+	}
+				
+.caption .boxcaption {
+	top: 220;
+	left: 0;
+	}
+				
+h3 a{}
+
+.member {
+	color:#FFF;
+	width:240px;
+	height:300px;
+	float:left;
+}
+
+.member_h {
+	color:#FFF;
+	width:320px;
+	height:300px;
+	float:left;
+}
+
+.member_h2 {
+	color:#FFF;
+	width:300px;
+	height:300px;
+	float:left;
+}
+
+.member_sp {
+	width:320px;
+	height:300px;
+}
+
+.member_sp table {
+	font-size:11px;
+}
+
+.outline{
+	width:300px;
+	height:300px;
+	float:left;
+	}
+
+.outline_h {
+	width:280px;
+	height:300px;
+	float:left;
+	}
+
+.outline-title{
+	width:300px;
+	height:30px;
+	float:left;
+	}
+
+.groupcontent{
+	line-height:18px;
+	font-size:14px;
+	color:#FFF;
+	margin-top:10px;
+	margin-left:10px;
+	magin-top:10px;
+	width:260px;
+	float:left;
+	height:auto;
+	
+}
+
+.groupcontent p {
+	font-size:12px;
+	width:250px;
+	
+	
+}
+
+.content_title{
+	float:left;
+	width:300px;
+	font-size:14px;
+	height:25px
+		
+	}
+
+.group-particularity{
+	margin-top:10px;
+	margin-left:20px;
+	margin-right:10px;
+	margin-bottom:10px;
+	font-size:14px;
+	color:#FFF;
+	height:130px;
+	width:300px;
+	float:left;
+	
+	}
+
+.group-particularity a:link{
+	color:#FFF;
+	
+	}
+	
+.group-particularity a:visited{
+	color:#FFF;
+	}	
+
+.group-particularity a:hover{
+	color:#F90;
+	}
+
+
+#group_name{
+	background-color:#00C;
+	width:200px;
+	float:left;
+	
+	}
+	
+#group_image{
+	background-color:#999;
+	
+	
+	}	
+	
+#group_outline{
+	
+	}	
+
+
+#Introduction {
+	background-image:url(../../img/layout/hover_Introduction.png);
+	background-position:top right;
+	background-repeat:no-repeat;
+	margin-left:0px;
+	margin-top:0px;
+	width:112px;
+	height:35px;
+	margin-bottom:0px;
+	float:left;
+	display:inline;
+	text-indent: -1000px;
+
+}
+
+a#Introduction {
+	background-image:url(../../img/layout/hover_Introduction.png);
+	background-position:top right;
+	background-repeat:no-repeat;
+	margin-left:0px;
+	margin-top:0px;
+	width:112px;
+	height:35px;
+	margin-bottom:0px;
+	float:left;
+	display:inline;
+	overflow:hidden;
+	outline:none;
+}
+
+a#Introduction:hover{
+	background-position: top left;
+	overflow:hidden;
+	outline:none;
+}
+
+#Groups {
+	background-image: url(../../img/layout/Research.png);
+	background-position:top right;
+	background-repeat:no-repeat;
+	margin-left:0px;
+	margin-top:0px;
+	width:110px;
+	height:35px;
+	margin-bottom:0px;
+	float:left;
+	display:block;
+	text-indent: -2000px;
+
+}
+
+a#Groups {
+	background-image: url(../../img/layout/Research.png);
+	background-position:top right;
+	background-repeat:no-repeat;
+	margin-left:0px;
+	margin-top:0px;
+	width:110px;
+	height:35px;
+	margin-bottom:0px;
+	float:left;
+	display: block;
+	overflow:hidden;
+	outline:none;
+
+}
+
+a#Groups:hover{
+	background-position: top left;
+	overflow:hidden;
+	outline:none;
+
+}
+
+#Papers {
+	background-image: url(../../img/layout/hover_Papers.png);
+	background-position:top right;
+	background-repeat:no-repeat;
+	margin-left:0px;
+	margin-top:0px;
+	width:110px;
+	height:35px;
+	margin-bottom:0px;
+	float:left;
+	display:inline;
+	text-indent: -2000px;
+
+}
+
+a#Papers {
+	background-image: url(../../img/layout/hover_Papers.png);
+	background-position:top right;
+	background-repeat:no-repeat;
+	margin-left:0px;
+	margin-top:0px;
+	width:110px;
+	height:35px;
+	margin-bottom:0px;
+	float:left;
+	display:inline;
+	overflow:hidden;
+	outline:none;	
+
+}
+
+a#Papers:hover{
+	background-position: top left;
+	overflow:hidden;
+	outline:none;	
+}
+
+#Members {
+	background-image:url(../../img/layout/hover_Members.png);
+	background-position:top right;
+	background-repeat:no-repeat;
+	margin-left:0px;
+	margin-top:0px;
+	width:108px;
+	height:35px;
+	margin-bottom:0px;
+	float:left;
+	display:inline;
+	text-indent: -1000px;
+}
+
+a#Members {
+	background-image:url(../../img/layout/hover_Members.png);
+	background-position:top right;
+	background-repeat:no-repeat;
+	margin-left:0px;
+	margin-top:0px;
+	width:108px;
+	height:35px;
+	margin-bottom:0px;
+	float:left;
+	display:inline;
+	overflow:hidden;
+	outline:none;
+}
+
+a#Members:hover{
+	background-position: top left;
+	overflow:hidden;
+	outline:none;	
+}
+
+#Schedule{
+	background-image: url(../../img/layout/hover_Schedule.png);
+	background-position:top right;
+	background-repeat:no-repeat;
+	margin-left:0px;
+	margin-top:0px;
+	width:112px;
+	height:35px;
+	margin-bottom:0px;
+	float:left;
+	display:inline;
+	text-indent: -2000px;
+
+}
+
+a#Schedule{
+	background-image: url(../../img/layout/hover_Schedule.png);
+	background-position:top right;
+	background-repeat:no-repeat;
+	margin-left:0px;
+	margin-top:0px;
+	width:112px;
+	height:35px;
+	margin-bottom:0px;
+	float:left;
+	display:inline;
+	overflow:hidden;
+	outline:none;	
+
+}
+
+
+a#Schedule:hover{
+	background-position: top left;
+	overflow:hidden;
+	outline:none;	
+}
+
+/* root element for scrollable */
+div.scrollable {  
+	
+	/* required settings */
+	position:relative;
+	overflow:hidden;
+
+	/* vertical scrollers have typically larger height than width */	
+	height: 550px;/*307px;*/	 
+	width: 800px;	
+	
+	/* decoration */
+	/*padding:0px 10px;
+	border:1px outset #ccc;
+	background-color:#efefef;*/
+}
+
+/* root element for scrollable items */
+div.scrollable div.items {	
+	position:absolute;
+	
+	/* this time we have very large space for height */	
+	height:20000em;	
+	
+	/* decoration */
+	margin-top:10px;
+}
+
+/* 
+	same settings as in horizontal scroller except that these items 
+	are not floated
+*/
+div.scrollable div.items div {
+	text-align:center;
+	width:800px;
+	height:480px;
+	padding:25px 0px;
+	font-size:30px;
+	font-family: 'bitstream vera sans';
+	border:1px outset #ccc;
+	background-color: #000;
+	-moz-border-radius:5px;
+	margin-bottom:10px;
+}
+
+/* active item */
+div.scrollable div.items div.active {
+	border:1px inset #ccc;		
+	background-color:#fff;
+}
+
+#youtube {
+width: 280px;
+height: 61px;
+float: right;
+font-family: verdana;
+font-size: 13px;
+line-height: 20px;
+}

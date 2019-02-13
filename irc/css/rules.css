@@ -1,0 +1,59 @@
+@charset "utf-8" ;
+/* ==========================
+ * Rules
+ * last-update: 09/03/11
+========================== */
+div.content_text{
+	backgound-color : #333; 
+}
+.content_text h3{
+	float : left;
+	display : block;
+	background-image : url(../img/common_subtitle_bg_right.png);
+	background-position : top right;
+	background-repeat : no-repeat;
+	color : #c60;
+	font-size : 1.2em;
+	font-weight : bold;
+	height : 40px;
+	margin-right : 6px;
+	margin-bottom : 10px;
+	padding-right : 12px;
+}
+.content_text h3 span{
+	display : block;
+	line-height : 35px;
+	background-image : url(../img/common_subtitle_bg_left.png);
+	background-position : top left;
+	background-repeat : no-repeat;
+	padding : 5px 25px 5px 35px;
+	margin : 0 0 0 2em;
+}
+.content_text p{
+	margin-left : 3em;
+}
+.content_text div#cg_mov{
+	position : relative;
+	width : 320px;
+	height : 350px;
+	float : right;
+	margin : 0 2em 0 1em;
+}
+.content_text div#cg_mov object{
+	width : 322px;
+	height : 287px;
+	background-color : #000;
+	border : solid 1px #000;
+}
+.content_text div#cg_mov div{
+	width : 300px;
+	height : auto;
+	text-align : center;
+}
+
+div#rules_dl{
+	margin-left : 6em;
+	width : 300px;
+	height : 180px;
+	background-color : #fff;
+}

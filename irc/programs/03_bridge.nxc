@@ -1,0 +1,528 @@
+/*-------------------------------------------------*/
+/*	comp8_final.nxc:
+	Internet Robot Competetion 2008 
+	
+	Created by T3 bridge
+	Musashi Institute of Technology
+	for Lego nxt  <2008/12/16>
+
+*/	>>nbc -S=usb -d comp8_dinal.nxc
+/*-------------------------------------------------*/
+
+#define THRESHOLD 45
+#define XCRD 6
+#define YCRD 3
+
+#define GX 0	//[mm]
+#define GY 0	//[mm]
+
+#define RC1 489	//rev count
+#define RC2 1000
+
+#define TURNR 2700//turn 90deg
+#define TURNL 2645//1945
+#define TURNZERO 2200
+#define TURNBR 1650
+#define TURNBL 1600
+#define GRAB 70//arm deg
+
+#define PRUNH 100
+#define PRUNL 90
+
+#define PTURN 100//80
+#define PGRAB 50
+
+#define HOSEI 200
+
+int crt;
+int xdes1, ydes1;
+int xdes2, ydes2;
+int xdesg, ydesg;
+int xdesf;
+
+int startTime;
+int endTime;
+int totalTime;
+    
+sub linetrack();
+sub turn_right();
+sub turn_left();
+sub front();
+sub back();
+sub reset();
+sub grab();
+sub release();
+sub goal();
+
+
+task run();
+task xzero_line();
+task yzero_line();
+
+task main()
+{
+	startTime = CurrentTick();
+	SetSensorLight(S1);
+	crt = 0;
+	xdesf = 1900*RC2/RC1;
+
+	if(XCRD == 0){
+		start xzero_line;
+	}else if(YCRD==0){
+	        start yzero_line;
+	}else{
+		start run;		
+	}
+
+}
+
+sub reset()
+{ 
+    OffEx(OUT_ABC,RESET_ROTATION_COUNT);
+    crt = 0;
+}
+
+sub linetrack()
+{
+    if (Sensor(S1) < THRESHOLD){
+        OnFwd(OUT_A,PRUNH);
+	OnFwd(OUT_C,PRUNL);
+	}else{
+	OnFwd(OUT_A,PRUNL);
+	OnFwd(OUT_C,PRUNH);
+	} 
+	crt = (MotorRotationCount(OUT_A) + MotorRotationCount(OUT_C))/2;
+}
+
+sub turn_right()
+{
+	Wait(100);
+	RotateMotorEx(OUT_AC,PTURN,TURNR/10,100,true,true);
+	reset(); 
+}
+
+sub turn_left()
+{
+	Wait(100);
+	RotateMotorEx(OUT_AC,PTURN,TURNL/10,-100,true,true);
+	reset(); 
+}
+
+sub front()
+{
+ if (MotorRotationCount(OUT_A) < MotorRotationCount(OUT_C)){
+       	     OnFwd(OUT_A,PRUNH);
+	     OnFwd(OUT_C,PRUNL);
+	}else{
+	OnFwd(OUT_A,PRUNL);
+	OnFwd(OUT_C,PRUNH);
+	} 
+	crt = (MotorRotationCount(OUT_A) + MotorRotationCount(OUT_C))/2;
+
+}
+sub back()
+{
+ if (MotorRotationCount(OUT_A) > MotorRotationCount(OUT_C)){
+        OnRev(OUT_A,PRUNH);
+	OnRev(OUT_C,PRUNL);
+	}else{
+	OnRev(OUT_A,PRUNL);
+	OnRev(OUT_C,PRUNH);
+	} 
+	crt = (MotorRotationCount(OUT_A) + MotorRotationCount(OUT_C))/2;
+
+}
+sub grab()
+{	
+    RotateMotor(OUT_B,PGRAB,GRAB);
+}
+
+sub release()
+{
+    RotateMotor(OUT_B,PGRAB,-GRAB); 
+    Off(OUT_ABC);   
+    endTime = CurrentTick();
+    totalTime = endTime - startTime;
+    NumOut(0, LCD_LINE1,totalTime);
+   
+
+    Wait(50000);
+
+}
+sub goal()
+{
+
+	if(xdesg > xdes1 && ydesg > ydes1){//1
+		 
+		 xdes2 = xdesg - xdes1 + 150;
+		 ydes2 = ydesg - ydes1 - 350;
+
+		 while(xdes2>crt){
+			if(crt < (xdesf - xdes1)){
+				linetrack();
+			}else{
+				front();
+			}
+		}
+	
+		reset();
+		
+		turn_left();
+		
+		reset();
+		while(ydes2>crt){
+			front();	
+		}
+		reset();
+
+	}else if(xdesg > xdes1 && ydes1 == ydesg){//2
+	      	 
+		 xdes2 = xdesg - xdes1 - 150;
+
+		 while(xdes2>crt){
+			if(crt < (xdesf - xdes1)){
+				linetrack();
+			}else{
+				front();
+			}
+		}
+	
+		reset();	
+
+	}else if(xdesg > xdes1 && ydes1 > ydesg){//3
+
+	      	 xdes2 = xdesg - xdes1 + 150;
+		 ydes2 = ydes1 - ydesg - 300;
+
+		 while(xdes2>crt){
+			if(crt < (xdesf - xdes1)){
+				linetrack();
+			}else{
+				front();
+			}
+		}
+	
+		reset();
+		RotateMotorEx(OUT_AC,PTURN,275,100,true,true);
+		//RotateMotorEx(OUT_AC,PTURN,TURNBL/10,100,true,true);
+		reset();
+		Wait(100);
+		reset();
+		
+		while(ydes2>crt){
+			front();	
+		}
+		reset();	
+
+	}else if(xdes1 == xdesg && ydesg > ydes1){//4
+
+		 ydes2 = ydesg - ydes1 - 320;
+		
+		turn_left();
+		
+		reset();
+
+		while(ydes2>crt){
+			front();	
+		}
+		reset();
+
+	}else if(xdes1 == xdesg && ydesg < ydes1){//5
+
+	      	 xdes2 = 150;
+		 ydes2 = ydes1 - ydesg - 250;
+		
+		turn_right();
+		
+		reset();
+
+		while(ydes2>crt){
+			front();	
+		}
+		reset();
+
+	}else if(xdes1 > xdesg && ydesg > ydes1){//6
+
+
+	      	 xdes2 = xdesg - xdes1 + 150;
+		 ydes2 = ydesg - ydes1 - 250;
+
+		 while(xdes2<crt){
+			back();
+		}
+	
+		reset();
+		
+
+		Wait(100);
+		RotateMotorEx(OUT_AC,PTURN,TURNBL/10,-100,true,true);
+		reset(); 
+		Wait(100);
+		reset();
+
+		while(ydes2>crt){
+			front();	
+		}
+		reset();
+
+	}else if(xdes1 > xdesg && ydesg == ydes1){//7
+
+	      	 xdes2 = xdesg - xdes1 - 100;
+
+		 while(xdes2<crt){
+			back();
+		}
+	
+		reset();
+
+	}else if(xdes1 > xdesg && ydes1 > ydesg){//8
+
+	      	 xdes2 = xdesg - xdes1 + 250;
+		 ydes2 = ydes1 - ydesg - 250;
+
+		 while(xdes2<crt){
+			back();
+		}
+	
+		Wait(100);
+
+		RotateMotorEx(OUT_AC,PTURN,TURNBR/10,100,true,true);
+		reset();
+		Wait(100);
+		reset();		
+
+		while(ydes2>crt){
+			front();	
+		}
+		reset();
+	
+	}
+
+}
+
+
+
+task run()
+{
+
+     xdes1 = (200 * XCRD) * RC2 / RC1;
+     ydes1 = (200 * YCRD) * RC2 / RC1;
+     xdesg = GX * RC2 / RC1;
+     ydesg = GY * RC2 / RC1;
+
+     while(ydes1>crt){
+	linetrack(); 
+     }
+
+     reset();
+
+     turn_right();
+
+     while(xdes1>crt){
+	
+	linetrack();
+     }
+
+     reset();
+
+     grab();
+
+     goal();
+
+
+	reset();
+	release();
+
+}
+
+task xzero_line()
+{
+	ydes1 = ( 200 * YCRD )*RC2/RC1;
+     	xdesg = GX * RC2 / RC1;
+     	ydesg = GY * RC2 / RC1;	
+	
+	while(ydes1>crt){
+		linetrack();
+	}
+	reset();
+	grab();
+
+	if(xdesg < 0 && ydesg > ydes1){//1
+		 
+		 xdes2 = 0-xdesg-150;
+		 ydes2 = ydesg - ydes1;
+
+		 while(ydes2>crt){
+			front();
+		}
+	
+		reset();
+		
+		turn_left();
+		
+		reset();
+		while(xdes2>crt){
+			front();	
+		}
+		reset();
+
+	}else if(xdesg == 0 && ydes1 < ydesg){//2
+	      	 
+		 ydes2 = ydesg - ydes1 -150;
+		 
+		 while(ydes2>crt){
+			front();
+		}
+		reset();	
+
+	}else if(xdesg > 0 && ydes1 < ydesg){//3
+
+	      	 xdes2 = xdesg - 150;
+		 ydes2 = ydesg - ydes1;
+
+		 while(ydes2>crt){
+			front();
+		}
+	
+		reset();
+		
+		turn_right();
+		
+		reset();
+		while(xdes2>crt){
+			if(crt < xdesf){
+				linetrack();
+			}else{
+				front();
+			}	
+		}
+		reset();	
+
+	}else if(0 > xdesg && ydesg == ydes1){//4
+
+		 xdes2 = -xdesg - 150;
+		
+		turn_left();
+		
+		reset();
+
+		while(xdes2>crt){
+			front();	
+		}
+		reset();
+
+	}else if(0 < xdesg && ydesg == ydes1){//5
+
+		 xdes2 = ydesg - 150;
+		
+		turn_right();
+		
+		reset();
+
+		while(xdes2>crt){
+			while(xdes2>crt){
+			if(crt < xdesf){
+				linetrack();
+			}else{
+				front();
+			}	
+		}	
+		}
+		reset();
+
+	}else if(0 > xdesg && ydesg < ydes1){//6
+
+
+	      	 xdes2 = -xdesg-150;
+		 ydes2 = ydesg - ydes1;
+
+		 while(ydes2<crt){
+			back();
+		}
+	
+		reset();
+		
+		Wait(100);
+		RotateMotorEx(OUT_AC,PTURN,TURNBL/10,-100,true,true);
+		reset(); 
+		Wait(100);
+		reset();
+
+		while(xdes2>crt){
+			front();	
+		}
+		reset();
+
+	}else if(xdesg == 0 && ydesg < ydes1){//7
+
+	      	 ydes2 = ydesg - ydes1 - 150;
+
+		 while(ydes2<crt){
+			back();
+		}
+	
+		reset();
+
+	}else if(xdesg > 0 && ydes1 > ydesg){//8
+
+	      	 xdes2 = xdesg-150;
+		 ydes2 = ydesg - ydes1;
+
+		 while(ydes2<crt){
+			back();
+		}
+	
+		reset();
+
+		Wait(100);
+		
+		RotateMotorEx(OUT_AC,PTURN,TURNBR/10,100,true,true);
+		
+		reset(); 
+		
+		Wait(100);
+	
+		reset();
+
+		while(xdes2>crt){
+			while(xdes2>crt){
+			if(crt < xdesf){
+				linetrack();
+			}else{
+				front();
+			}	
+		}	
+		}
+		reset();
+	
+	}
+
+	reset();
+	release();
+}
+
+task yzero_line()
+{
+     xdes1 = (200 * XCRD) * RC2 / RC1;    
+     xdesg = GX * RC2 / RC1;
+     ydesg = GY * RC2 / RC1;
+
+     RotateMotorEx(OUT_AC,PTURN,TURNZERO/10,100,true,true);
+     reset();
+
+     while(xdes1>crt){
+	
+	linetrack();
+     }
+
+     reset();
+
+     grab();
+
+     goal();
+
+
+	reset();
+	release();
+}
+

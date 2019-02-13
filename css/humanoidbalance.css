@@ -1,0 +1,772 @@
+/* height of both side bar */
+#middle_back_left1, #middle_back_right1{
+	height:2200px;
+}
+
+#middle_back_left2, #middle_back_right2{
+	height:1600px;
+}
+
+#middle_back_left3, #middle_back_right3{
+	height:1350px;
+}
+
+a.link{
+	width:220px;
+	padding-top:10px;
+	padding-bottom:10px;
+	float:left;
+	text-align:center;
+	font-size:16px;
+	color:#F90;
+}
+
+a.linkB{
+	width:220px;
+	padding-top:10px;
+	padding-bottom:10px;
+	float:left;
+	text-align:center;
+	font-size:16px;
+}
+
+
+/* ç∂ÇÃmenu énÇ‹ÇË */
+/* ------------------------------------------------------------------ */
+.slide_top{
+	font-family:"ÉqÉâÉMÉmäpÉS Pro W3", "Hiragino Kaku Gothic Pro",
+	"ÉÅÉCÉäÉI", Meiryo, Osaka, sans-serif Verdana, Arial,
+	Helvetica, sans-serif;
+	font-size:16px;
+	cursor:pointer;
+	background-color:#CCC;	
+	margin:0px;
+	padding:2px;
+}
+
+.slide_content{
+	font-family:'ÉqÉâÉMÉmäpÉS Pro W3','Hiragino Kaku Gothic Pro',
+	'ÉÅÉCÉäÉI',Meiryo,'ÇlÇr ÇoÉSÉVÉbÉN',sans-serif;
+	margin:0px;
+	padding:5px;
+	text-align:left;
+	font-size:16px;
+}
+
+#menu{
+	position:absolute;
+	top:150px;
+	width:120px;
+	height:350px;
+	display:inline;
+}
+
+#menuwrap{
+	float:left;
+	width:120px;
+	height:600px;
+	display:inline;
+}
+
+.sub_menu{
+	font-size:14px;
+}
+
+/* ------------------------------------------------------------------ */
+/* ç∂ÇÃmenu èIÇÌÇË */
+
+
+#content_head{
+	width:890px;
+	height:30px;
+	margin:3px;
+}
+
+#group_name{
+	font: 2em normal Georgia, 'Times New Roman', Times, serif;
+	letter-spacing: 0.3em;
+	color: #666;
+	margin-left:2px;
+	width:auto;
+	margin-top:0px;
+	margin-right: 2px;
+	margin-bottom: 2px;
+}
+
+#group_content{
+	width:760px;
+	height:auto;
+	float:left;
+	padding:5px;
+}
+	
+.content_name{
+	float:left;
+	font-size:18px;
+	font-family:Arial, Helvetica, sans-serif;
+	padding-right:15px;
+	padding-left:15px;
+	padding-top:10px;
+	padding-bottom:5px;
+	font-family:'ÉqÉâÉMÉmäpÉS Pro W3','Hiragino Kaku Gothic Pro',
+	'ÉÅÉCÉäÉI',	Meiryo,'ÇlÇr ÇoÉSÉVÉbÉN',sans-serif;
+	background-color:#CCC;	
+}
+
+.content{
+	font-size:16px;
+	width:680px;
+	margin-left:10px;
+	padding-left:15px;
+	padding-top:5px;
+	padding-bottom:5px;
+	overflow:hidden;
+	outline:none;
+}
+
+#img_wrap{
+	text-align:center;
+	width:640px;	
+}
+
+#img_wrap2{
+	text-align:center;
+	width:600px;	
+}
+
+.img{
+	padding:10px;
+	width:290px;
+	height:250px;
+	float:left;	
+	text-align:center;
+	
+}
+
+.img3{
+	padding:10px;
+	width:300px;
+	height:210px;
+	float:left;	
+	text-align:center;
+	padding-top:20px
+}
+
+;
+
+.img2{
+	padding:10px;
+	width:270px;
+	height:250px;
+	float:left;
+	text-align:center;
+	img-align:midlde;
+}
+
+.caption{
+	float:bottom;
+	text-align:center;
+}
+
+.img-single{
+	text-align:center;
+	margin-top:20px;
+	width:640px;
+}
+
+.photo_cap{
+	padding:5px;
+	font-size:16px;
+	text-align:center;
+	float:left;
+    width:570px;
+}
+
+.movie{
+	float:left;
+	padding:10px;
+	padding-left:118px;
+	overflow:hidden;
+	outline:none;	
+}
+
+.movie_sub{
+	float:left;
+	width:425px;
+	padding:10px;
+	overflow:hidden;
+	outline:none;	
+}
+
+.movie_wide{
+	float:left;
+	width:600px;
+	padding:10px;
+	padding-left:55px;
+	overflow:hidden;
+	outline:none;	
+}
+
+.movieSmall{
+	float:left;
+	width:300px;
+	padding:10px;
+	padding-left:0px;
+	overflow:hidden;
+	outline:none;	
+}
+
+.movieBig{
+	float:left;
+	width:480px;
+	padding:10px;
+	padding-left:90px;
+	overflow:hidden;
+	outline:none;	
+}
+
+.movie_cap{
+	float:left;
+	font-size:16px;
+	padding:10px;
+	width:645px;
+}	
+
+.movie_subCap{
+	float:left;
+	text-align:center;
+	font-size:16px;
+}	
+
+
+/* layout image énÇ‹ÇË */
+/* ------------------------------------------------------------------ */
+#left{
+	width:20px;
+	height:auto;
+	margin:0;
+	float:left;
+	display:inline;
+	background-color:#FFF;
+}
+
+#Middle_left{
+	background-image:url(../../img/layout/Middle_left.png);
+	background-color:#FFF;
+	background-repeat:no-repeat;
+	margin-left:0px;
+	margin-top:0px;
+	width:20px;
+	height:350px;
+	margin-bottom:0px;
+	float:left;
+	display:inline;
+}
+
+#middle_back_left1{
+	background-image:url(../../img/layout/middle_back_left.png);
+	background-repeat:repeat-y;
+	float:left;
+	width:20px;
+	display:inline;
+}
+
+#middle_back_left2{
+	background-image:url(../../img/layout/middle_back_left.png);
+	background-repeat:repeat-y;
+	float:left;
+	width:20px;
+	display:inline;
+}
+
+#middle_back_left3{
+	background-image:url(../../img/layout/middle_back_left.png);
+	background-repeat:repeat-y;
+	float:left;
+	width:20px;
+	display:inline;
+}
+
+#right{
+	width:20px;
+	margin:0;
+	height:auto;
+	float:left;
+	display:inline;
+	background-color:#FFF;
+}
+
+#Middle_right{
+	background-image:url(../../img/layout/Middle_right.png);
+	margin-left:0px;
+	margin-top:0px;
+	width:20px;
+	height:350px;
+	margin-bottom:0px;
+	float:left;
+	display:inline;
+}
+
+#middle_back_right1{
+	background-image:url(../../img/layout/middle_back_right.png);
+	background-repeat:repeat-y;
+	float:left;
+	width:20px;
+	display:inline;
+}
+
+#middle_back_right2{
+	background-image:url(../../img/layout/middle_back_right.png);
+	background-repeat:repeat-y;
+	float:left;
+	width:20px;
+	display:inline;
+}
+
+#middle_back_right3{
+	background-image:url(../../img/layout/middle_back_right.png);
+	background-repeat:repeat-y;
+	float:left;
+	width:20px;
+	display:inline;
+}
+/* ---------------------------	--------------------------------------- */
+/* layout image èIÇÌÇË */
+
+
+#content{
+	background-color:#FFF;
+	width:890px;
+	height:2200px;
+	float:left;
+	margin:auto;
+	overflow:visible;
+	display:inline;
+
+	line-height:200%;
+}
+
+/* top menu énÇ‹ÇË */
+/* ------------------------------------------------------------------ */
+#Introduction {
+	background-image:url(../../img/layout/hover_Introduction.png);
+	background-position:top right;
+	background-repeat:no-repeat;
+	margin-left:0px;
+	margin-top:0px;
+	width:112px;
+	height:35px;
+	margin-bottom:0px;
+	float:left;
+	display:inline;
+	text-indent: -1000px;
+
+}
+
+a#Introduction {
+	background-image:url(../../img/layout/hover_Introduction.png);
+	background-position:top right;
+	background-repeat:no-repeat;
+	margin-left:0px;
+	margin-top:0px;
+	width:112px;
+	height:35px;
+	margin-bottom:0px;
+	float:left;
+	display:inline;
+	overflow:hidden;
+	outline:none;
+}
+
+a#Introduction:hover{
+	background-position: top left;
+	overflow:hidden;
+	outline:none;
+}
+
+#Groups {
+	background-image: url(../../img/layout/Research.png);
+	background-position:top right;
+	background-repeat:no-repeat;
+	margin-left:0px;
+	margin-top:0px;
+	width:110px;
+	height:35px;
+	margin-bottom:0px;
+	float:left;
+	display:block;
+	text-indent: -2000px;
+
+}
+
+a#Groups {
+	background-image: url(../../img/layout/Research.png);
+	background-position:top right;
+	background-repeat:no-repeat;
+	margin-left:0px;
+	margin-top:0px;
+	width:110px;
+	height:35px;
+	margin-bottom:0px;
+	float:left;
+	display: block;
+	overflow:hidden;
+	outline:none;
+
+}
+
+a#Groups:hover{
+	background-position: top left;
+	overflow:hidden;
+	outline:none;
+
+}
+
+#Papers {
+	background-image: url(../../img/layout/hover_Papers.png);
+	background-position:top right;
+	background-repeat:no-repeat;
+	margin-left:0px;
+	margin-top:0px;
+	width:110px;
+	height:35px;
+	margin-bottom:0px;
+	float:left;
+	display:inline;
+	text-indent: -2000px;
+
+}
+
+a#Papers {
+	background-image: url(../../img/layout/hover_Papers.png);
+	background-position:top right;
+	background-repeat:no-repeat;
+	margin-left:0px;
+	margin-top:0px;
+	width:110px;
+	height:35px;
+	margin-bottom:0px;
+	float:left;
+	display:inline;
+	overflow:hidden;
+	outline:none;	
+
+}
+
+a#Papers:hover{
+	background-position: top left;
+	overflow:hidden;
+	outline:none;	
+}
+
+#Members {
+	background-image:url(../../img/layout/hover_Members.png);
+	background-position:top right;
+	background-repeat:no-repeat;
+	margin-left:0px;
+	margin-top:0px;
+	width:108px;
+	height:35px;
+	margin-bottom:0px;
+	float:left;
+	display:inline;
+	text-indent: -1000px;
+}
+
+a#Members {
+	background-image:url(../../img/layout/hover_Members.png);
+	background-position:top right;
+	background-repeat:no-repeat;
+	margin-left:0px;
+	margin-top:0px;
+	width:108px;
+	height:35px;
+	margin-bottom:0px;
+	float:left;
+	display:inline;
+	overflow:hidden;
+	outline:none;
+}
+
+a#Members:hover{
+	background-position: top left;
+	overflow:hidden;
+	outline:none;	
+}
+
+
+#Schedule{
+	background-image: url(../../img/layout/hover_Schedule.png);
+	background-position:top right;
+	background-repeat:no-repeat;
+	margin-left:0px;
+	margin-top:0px;
+	width:112px;
+	height:35px;
+	margin-bottom:0px;
+	float:left;
+	display:inline;
+	text-indent: -2000px;
+
+}
+
+a#Schedule{
+	background-image: url(../../img/layout/hover_Schedule.png);
+	background-position:top right;
+	background-repeat:no-repeat;
+	margin-left:0px;
+	margin-top:0px;
+	width:112px;
+	height:35px;
+	margin-bottom:0px;
+	float:left;
+	display:inline;
+	overflow:hidden;
+	outline:none;	
+
+}
+
+
+a#Schedule:hover{
+	background-position: top left;
+	overflow:hidden;
+	outline:none;	
+}
+/* ------------------------------------------------------------------ */
+/* top menu èIÇÌÇË */
+
+
+
+
+.subindex{
+	font-size:16px;
+}
+	
+.subindex_content{
+	width:640px;
+	float:left;
+	padding-left:24px;
+	padding-top:5px;
+	padding-bottom:10px;
+	font-size:16px;
+	}	
+	
+.subsubindex{
+	float:left;
+	font-size:16px;
+	padding-left:25px;
+	padding-top:5px;
+	padding-bottom:5px;
+	width:360px;
+	
+	}
+	
+.subsub_content{
+	float:left;
+	width:600px;
+	font-size:16px;
+	padding-left:64px;
+	padding-top:5px;
+	padding-bottom:10px;
+	
+	}	
+
+
+/* botton (ÉoÉâÉìÉXÅATrajectory/ForceÅAÉVÉ~ÉÖÉåÅ[É^) */
+/* ------------------------------------------------------------------ */
+#balance1 {
+	background-image:url(../../img/research/humanoid/balance1.png);
+	margin-left:20px;
+	margin-top:10px;
+	margin-bottom:10px;
+	width:198px;
+	height:58px;
+	float:left;
+	display:inline;
+	text-indent: -1000px;
+
+}
+
+a#balance1 {
+	background-image:url(../../img/research/humanoid/balance1.png);
+	margin-left:0px;
+	margin-top:0px;
+	margin-bottom:0px;
+	width:198px;
+	height:58px;
+	float:left;
+	display:inline;
+	overflow:hidden;
+	outline:none;
+}
+
+a#balance1:hover{
+	overflow:hidden;
+	outline:none;
+}
+
+#balance2 {
+	background-image:url(../../img/research/humanoid/balance2.png);
+	margin-left:20px;
+	margin-top:10px;
+	margin-bottom:10px;
+	width:198px;
+	height:58px;
+	float:left;
+	display:inline;
+	text-indent: -1000px;
+
+}
+
+a#balance2 {
+	background-image:url(../../img/research/humanoid/balance2.png);
+	margin-left:0px;
+	margin-top:0px;
+	margin-bottom:0px;
+	width:198px;
+	height:58px;
+	float:left;
+	display:inline;
+	overflow:hidden;
+	outline:none;
+}
+
+a#balance2:hover{
+	background-image:url(../../img/research/humanoid/balance1.png);
+	overflow:hidden;
+	outline:none;
+}
+
+#FT1 {
+	background-image: url(../../img/research/humanoid/TF1.png);
+	margin-left:20px;
+	margin-top:10px;
+	margin-bottom:10px;
+	width:198px;
+	height:58px;
+	float:left;
+	display:block;
+	text-indent: -2000px;
+
+}
+
+a#FT1 {
+	background-image: url(../../img/research/humanoid/TF1.png);
+	margin-left:0px;
+	margin-top:0px;
+	margin-bottom:0px;
+	width:198px;
+	height:58px;
+	float:left;
+	display: block;
+	overflow:hidden;
+	outline:none;
+
+}
+
+a#FT1:hover{
+	overflow:hidden;
+	outline:none;
+
+}
+
+#FT2 {
+	background-image: url(../../img/research/humanoid/TF2.png);
+	margin-left:20px;
+	margin-top:10px;
+	margin-bottom:10px;
+	width:198px;
+	height:58px;
+	float:left;
+	display:block;
+	text-indent: -2000px;
+
+}
+
+a#FT2 {
+	background-image: url(../../img/research/humanoid/TF2.png);
+	margin-left:0px;
+	margin-top:0px;
+	margin-bottom:0px;
+	width:198px;
+	height:58px;
+	float:left;
+	display: block;
+	overflow:hidden;
+	outline:none;
+
+}
+
+a#FT2:hover{
+	background-image: url(../../img/research/humanoid/TF1.png);
+	overflow:hidden;
+	outline:none;
+
+}
+
+#simulator1 {
+	background-image: url(../../img/research/humanoid/simulator1.png);
+	margin-left:20px;
+	margin-top:10px;
+	margin-bottom:10px;
+	width:198px;
+	height:58px;
+	float:left;
+	display:block;
+	text-indent: -2000px;
+
+}
+
+a#simulator1 {
+	background-image: url(../../img/research/humanoid/simulator1.png);
+	margin-left:0px;
+	margin-top:0px;
+	margin-bottom:0px;
+	width:198px;
+	height:58px;
+	float:left;
+	display: block;
+	overflow:hidden;
+	outline:none;
+
+}
+
+a#simulator1:hover{
+	overflow:hidden;
+	outline:none;
+
+}
+
+#simulator2 {
+	background-image: url(../../img/research/humanoid/simulator2.png);
+	margin-left:20px;
+	margin-top:10px;
+	margin-bottom:10px;
+	width:198px;
+	height:58px;
+	float:left;
+	display:block;
+	text-indent: -3000px;
+
+}
+
+a#simulator2 {
+	background-image: url(../../img/research/humanoid/simulator2.png);
+	margin-left:0px;
+	margin-top:0px;
+	margin-bottom:0px;
+	width:198px;
+	height:58px;
+	float:left;
+	display: block;
+	overflow:hidden;
+	outline:none;
+
+}
+
+a#simulator2:hover{
+	background-image: url(../../img/research/humanoid/simulator1.png);
+	overflow:hidden;
+	outline:none;
+
+}

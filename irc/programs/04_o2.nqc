@@ -1,0 +1,224 @@
+/*-------------------------------------------------------------
+
+LEGO_ROBOT_competition Revision.23
+
+Competition program for RCX
+
+Programed by Shun Ota & Tsuyoshi Oono
+
+-------------------------------------------------------------*/
+
+#define X_BLOCK_OBJECT 6
+#define Y_BLOCK_OBJECT 3
+#define X_GOAL_DISTANCE 1800
+#define Y_GOAL_DISTANCE 0
+
+#define ONE_LIFTDOWN 14
+#define THRESHOLD 41
+#define ONE_BLOCK 62
+#define RATIO 200
+#define OFFSET 5
+#define OFFSET2 30
+#define CATCH_OFFSET 62
+#define RIGHT_ANGLE_S1 40
+#define RIGHT_ANGLE_S3 32
+#define SENSOR_TO_TIRE 24
+
+#define INITIALIZE SetSensor(SENSOR_1,SENSOR_ROTATION); SetSensor(SENSOR_2,SENSOR_LIGHT); SetSensor(SENSOR_3,SENSOR_ROTATION); SetPower(OUT_B,5); SetPower(OUT_A,5); SetPower(OUT_C,5);
+#define SENSOR_CLEAR ClearSensor(SENSOR_1); ClearSensor(SENSOR_3);
+
+int sem;
+
+task main()
+{
+
+CreateDatalog(1); 
+Timer (1); 
+ClearTimer (1);
+int X_BLOCK_OBJECT_COUNT,X_BLOCK_GOAL,Y_BLOCK_GOAL;
+int XCOUNT,YCOUNT;
+
+X_BLOCK_GOAL = X_GOAL_DISTANCE / RATIO;
+Y_BLOCK_GOAL = Y_GOAL_DISTANCE / RATIO;
+
+XCOUNT = X_GOAL_DISTANCE - X_BLOCK_OBJECT * ONE_BLOCK;
+YCOUNT = Y_GOAL_DISTANCE - Y_BLOCK_OBJECT * ONE_BLOCK;
+
+INITIALIZE;
+go_straight_and_line_trace(Y_BLOCK_OBJECT, OFFSET);
+turn_right();
+go_straight_and_line_trace(X_BLOCK_OBJECT, CATCH_OFFSET);
+catch_item();
+
+////////////////////////////////////////////////////////////////
+
+if(X_BLOCK_GOAL > X_BLOCK_OBJECT){
+
+  if(Y_BLOCK_GOAL > Y_BLOCK_OBJECT){
+  
+    go_straight_and_line_trace(X_BLOCK_GOAL - X_BLOCK_OBJECT + 1, OFFSET);
+    turn_left();
+    go_straight_and_line_trace(0, YCOUNT+CATCH_OFFSET);
+  
+  }else{
+  
+    go_straight_and_line_trace(X_BLOCK_GOAL - X_BLOCK_OBJECT + 1, OFFSET);
+    turn_right();
+    go_straight_and_line_trace(0, YCOUNT+CATCH_OFFSET);
+  
+  }
+
+}else{
+
+  if(Y_BLOCK_GOAL < Y_BLOCK_OBJECT){
+  
+    go_straight_and_line_trace(1, 0);
+    turn_right();
+    go_straight_and_line_trace(Y_BLOCK_OBJECT - Y_BLOCK_GOAL, -OFFSET2);
+    turn_right();
+    go_straight_and_line_trace(1, XCOUNT+CATCH_OFFSET);
+  
+  }else{
+  
+    go_straight_and_line_trace(1, 0);
+    turn_left();
+    go_straight_and_line_trace(Y_BLOCK_GOAL - Y_BLOCK_OBJECT, -OFFSET2);
+    turn_left();
+    go_straight_and_line_trace(1, XCOUNT+CATCH_OFFSET);
+  
+  }
+
+}
+
+////////////////////////////////////////////////////////////////
+
+release_item();
+AddToDatalog(Timer(1));
+
+}
+
+void go_straight_and_line_trace(int block_num, int offset){
+
+int n=1, flag=0;
+SENSOR_CLEAR;
+
+do {
+
+   if (SENSOR_2 > THRESHOLD){
+     flag=1;
+     OnFwd(OUT_C);
+     Off(OUT_A);
+   }
+
+   if(flag==0){
+
+    if(SENSOR_1 < SENSOR_3){
+      OnFwd(OUT_A);
+      Float(OUT_C);
+    }else if(SENSOR_1 > SENSOR_3){
+      OnFwd(OUT_C);
+      Float(OUT_A);
+    }else{
+      OnFwd(OUT_A+OUT_C);
+    }
+
+   }
+
+   if (SENSOR_2 <= THRESHOLD){
+     OnFwd (OUT_A);
+     Off(OUT_C);
+   }
+
+}while((SENSOR_1 + SENSOR_3)/2 < ONE_BLOCK * block_num - offset);
+
+Off(OUT_A+OUT_C);
+
+}
+
+void turn_right(){
+
+SENSOR_CLEAR;
+
+sem=0;
+
+start R_right_rotation;
+start R_left_rotation;
+
+while(true){
+if(sem==2)break;
+}
+
+}
+
+void turn_left(){
+
+SENSOR_CLEAR;
+
+sem=0;
+
+start L_left_rotation;
+start L_right_rotation;
+
+while(true){
+if(sem==2)break;
+}
+
+}
+
+void catch_item(){
+
+OnFwd (OUT_B);
+
+}
+
+void release_item(){
+
+OnRev (OUT_B);
+Wait(ONE_LIFTDOWN);
+Off(OUT_B);
+
+}
+
+task R_right_rotation(){
+
+do{
+  OnRev(OUT_C);
+}while(-SENSOR_3 < RIGHT_ANGLE_S3);
+
+sem++;
+Off(OUT_C);
+
+}
+
+task R_left_rotation(){
+
+do{
+  OnFwd(OUT_A);
+}while(SENSOR_1 < RIGHT_ANGLE_S1);
+
+sem++;
+Off(OUT_A);
+
+}
+
+task L_right_rotation(){
+
+do{
+  OnRev(OUT_A);
+}while(-SENSOR_1 < RIGHT_ANGLE_S1);
+
+sem++;
+Off(OUT_A);
+
+}
+
+task L_left_rotation(){
+
+do{
+  OnFwd(OUT_C);
+}while(SENSOR_3 < RIGHT_ANGLE_S3 -10);
+
+sem++;
+Off(OUT_C);
+
+}

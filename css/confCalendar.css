@@ -1,0 +1,67 @@
+body{
+	font-family: "‚l‚r ‚o–¾’©","‚l‚r –¾’©","serif";
+}
+
+p, h1{
+  margin: 0 0 1px 15px;
+  padding: 15px 5px 10px 15px;
+}
+
+ol.list132 li {
+  margin: 0 0 1px 15px;
+  padding: 15px 5px 10px 15px;
+  list-style-type: upper-alpha;
+}
+
+ol.list132 li.odd {
+  background: #CDF2CE;
+}
+
+ol.list132 li.even {
+  background: #E5F2E5;
+}
+
+
+
+table.table001 {
+  margin-top: 0.2em;
+  margin-left: 3em;
+  margin-bottom: 3em;
+  width: 570px;
+  border-collapse: separate;
+  border-spacing: 3px;
+  font-size: 100%;
+}
+
+table.table001 caption {
+  margin-top: 1em;
+  text-align: center;
+}
+
+table.table001 th,
+table.table001 td {
+  padding: 10px 10px;
+}
+
+table.table001 th {
+  background: #1B3AB4;
+  text-align: center;
+  white-space: nowrap;
+  font-size: 92%;
+  color: #FFF;
+}
+
+table.table001 td {
+  background: #E5EAFF;
+  text-align: center;
+  white-space: nowrap;
+}
+
+table.table001 td.deadline{
+  padding-left: 1.5em;
+  padding-right: 1.5em;
+  text-align: left;  
+}
+table.table001 td.deadline s{
+	color: #f00  
+}

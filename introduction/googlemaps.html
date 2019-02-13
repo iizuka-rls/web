@@ -1,0 +1,66 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="Generator" content="GMapCreator,http://www.geekpage.jp/">
+
+<title>Google Map</title>
+
+<script src="http://maps.google.com/maps?file=api&v=2&key=ABQIAAAATC-xu1uod83I3zILzlSnFRRdPj7isnPFmk_1Ellkka509uIHpBS_N8d8Li738XXR6fykTeabpDs7Ow"type="text/javascript" charset="utf-8"></script>
+
+<!-- ここへ地図を出力します↓ -->
+<script type="text/javascript">
+  // <![CDATA[
+  var map;
+  var markers = new Array(1);
+
+  function onLoad() {
+    map = new GMap2(document.getElementById("map"));
+    // 所在地の座標設定
+    map.setCenter(new GLatLng(35.59807461871874,139.6510899066925),13);
+    map.addControl(new GLargeMapControl());
+    map.addControl(new GMapTypeControl());
+    map.addControl(new GOverviewMapControl());
+    map.setMapType(G_NORMAL_MAP);
+    new GKeyboardHandler(map);
+    var marker = null;
+    var n_markers = 0;
+    var markeropts = new Object();
+    // 中心を所在地と別に設定する場合
+    marker = new GMarker(new GPoint(139.65068757534027,35.59676167083716), markeropts);
+    markers[n_markers] = marker;
+    n_markers++;
+    map.addOverlay(marker);
+    // マウスオーバー
+    GEvent.addListener(marker, 'mouseover', function() {
+    marker.openInfoWindowHtml(
+    "<img src=../img/layout/index_logo.png><br>東急大井町線尾山台駅より徒歩約15分"
+    );});
+  }
+  // ]]>
+</script>
+<!-- ここへ地図を出力します↑ -->
+
+<!-- JavaScript -->
+<!-- google analytics 始まり -->
+<!-- --------------------------------------------------------------------------------- -->
+<script type="text/javascript">
+	var _gaq = _gaq || [];
+	_gaq.push(['_setAccount', 'UA-24804972-1']);
+	_gaq.push(['_trackPageview']);
+	(function() {
+		var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+		ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+		var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	})();
+</script>
+<!-- --------------------------------------------------------------------------------- -->
+<!-- google analytics 終わり -->
+</head>
+
+<body onload="onLoad()" style="margin:0px; padding:0px;">
+<div id="map" style="width:800px; height:600px; margin:0px; padding:0px;"></div>
+</body>
+</html>

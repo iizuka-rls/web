@@ -1,0 +1,60 @@
+@charset "utf-8";
+/* CSS Document */
+
+body{
+	opacity: 0.8; 
+		/* For IE 5-7 */
+		filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=80);
+		/* For IE 8 */
+		-MS-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";
+	}
+
+#topics{
+	font-size:10px;
+}
+
+.high_light{
+	color:#F00;
+	
+	}
+
+.topic_box{
+	float:left;
+	padding:2px;
+	
+	}
+
+.topic_category{
+	float:left;
+	
+	}
+
+.topic_category_new{
+	float:left;
+	color:#F60;
+	
+	}
+	
+.topic_category_old{
+	float:left;
+	color:#FFF;
+	
+	}	
+
+.topic_date{
+	float:left;
+	margin-left:10px;
+	
+	}
+	
+.topic_content{
+	float:left;
+	margin-left:10px;
+	width:385px;
+	}	
+
+.topic_content a:hover{
+	color:#F60;
+	
+	}
+	

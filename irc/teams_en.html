@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta http-equiv="Content-Style-Type" content="text/css" />
+		<meta http-equiv="Content-Script-Type" content="text/javascript" />
+		<link href="css/import_teams.css" rel="stylesheet" type="text/css" title="style for teams page" media="all" />
+		<script src="js/lib/analytics.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/lib/iepngfix.js" type="text/javascript"></script>
+		<script src="js/lib/jquery-1.2.6.min.js" type="text/javascript"></script>
+		<script src="js/lib/jquery.dimensions.min.js" type="text/javascript"></script>
+		<script src="js/lib/jquery.ahover.js" type="text/javascript"></script>
+		<script src="js/lib/jquery.fancyzoom.min.js" type="text/javascript"></script>
+		<script src="js/jquery.ahover.setting.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/jquery.accmenu.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/jquery.fancy-zoom.setting.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/jquery.effect.teams.js" type="text/javascript" charset="utf-8"></script>
+		<title>Internet Robot Competition 2008: TEAMS</title>
+	</head>
+	
+	<body>
+		<div id="wrapper">
+			
+			<div id="header">
+				<h1><a href="http://www.rls.mse.tcu.ac.jp/robotics/irc/" title="Internet Robot Competition 2008">
+						<img src="img/common_header_logo.png" id="header_logo" alt="Internet Robot Competition 2008" width="360" height="45" />
+				</a></h1>
+				
+				<div id="header_navi">
+					<ul>
+						<li><a href="index_en.html" title="Top page">TOP</a></li>
+						<li><a href="about_en.html" title="About this competition">ABOUT</a></li>
+						<li><a href="teams_en.html" title="Participating teams and LEGO Robots">TEAMS</a></li>
+						<li><a href="rules_en.html" title="Rules and regulations">RULES</a></li>
+						<li><a href="photos_en.html" title="Photos">PHOTOS</a></li>
+						<!--<li><a href="other_en.html" title="Other contents">OTHER</a></li>-->
+					</ul>
+				</div><!-- end #header_navi -->
+			
+				<a href="teams.html" id="header_lang" title="日本語ページへ">日本語</a><!-- end #header_lang -->
+				
+			</div><!-- end #header -->
+			
+			<div id="clearance">
+				
+			</div><!-- end #clearance -->
+			
+			<div id="container">
+				
+				<div id="side_bar" class="content">
+					<div class="content_title"><h2>MENU</h2></div>
+					<ul class="content_text">
+						<li><a href="1"><img id="group01" class="iepngfix" src="img/teams_sidebar_text01.png" width="97" height="40" alt="MI-Tech" /></a>
+							<ul class="teams">
+								<li><a href="#" id="menu01">ReVo</a></li>
+								<li><a href="#" id="menu02">BUCCHI</a></li>
+								<li><a href="#" id="menu03">bridge</a></li>
+								<li><a href="#" id="menu04">O<span class="sub">2</span></a></li>
+								<li><a href="#" id="menu05">Heiter/FelsGarten</a></li>
+								<li><a href="#" id="menu06">Legorian</a></li>
+							</ul>
+						</li>
+						<li><a href="2"><img id="group02" class="iepngfix" src="img/teams_sidebar_text02.png" width="102" height="40" alt="TU-Sofia" /></a>
+							<ul class="teams">
+								<li><a href="#" id="menu07">R2D2</a></li>
+								<li><a href="#" id="menu08">Zombaio</a></li>
+								<li><a href="#" id="menu09">Hyperspace</a></li>
+								<li><a href="#" id="menu10">SHH neznam</a></li>
+							</ul>
+						</li>
+					</ul>
+				</div><!-- end #side_bar -->
+									
+				<div id="main_content" class="content">
+						<div class="content_title"><h2>TEAMS</h2></div>
+        				<div class="content_text">
+        					<div class="iepngfix btns">
+								<a href="#" id="img_robot" width="400" height="300" title="LEGO Robot"><img src="img/teams_btns_robot_out.png" class="iepngfix btn_robot" alt="LEGO Robot" width="130" height="113" /></a>
+								<a href="#" id="file_program" title="nxc or nqc program"><img src="img/teams_btns_program_out.png" class="iepngfix btn_program" alt="Program" width="130" height="113" /></a>
+							</div>
+	 						<ul id="scroll_window">
+								<li id="team01">
+									<div class="team_name"><h3>ReVo</h3></div>
+									<img src="img/teams_member_img_01.png" class="iepngfix member" alt="チームメンバー" width="400" height="300" />
+									<div class="member_name">
+										<span>Jun Takahashi</span><br /><span>Yuki Hatori</span>
+									</div>
+									<div id="team_robot_01">
+										<img src="img/teams_robot_img_01.jpg" />
+									</div>
+									<div class="medal">
+										<img src="img/teams_medal_01.png" width="200" height="200" />
+									</div>
+								</li>
+								<li id="team02">
+									<div class="team_name"><h3>BUCCHI</h3></div>
+									<img src="img/teams_member_img_02.png" class="iepngfix member" alt="チームメンバー" width="400" height="300" />
+									<div class="member_name">
+										<span>Youichi Handa</span><br /><span>Tatsuya Nishii</span>
+									</div>
+									<div id="team_robot_02">
+										<img src="img/teams_robot_img_02.jpg" />
+									</div>
+<div class="medal">
+										<img src="img/teams_medal_03.png" width="200" height="200" />
+									</div>
+								</li>
+								<li id="team03">
+									<div class="team_name"><h3>bridge</h3></div>
+									<img src="img/teams_member_img_03.png" class="iepngfix member" alt="チームメンバー" width="400" height="300" />
+									<div class="member_name">
+										<span>Takamitsu Nara</span><br /><span>Fuyuki Sato</span>
+									</div>
+									<div id="team_robot_03">
+										<img src="img/teams_robot_img_03.jpg" />
+									</div>
+								</li>
+								<li id="team04">
+									<div class="team_name"><h3>O<span class="sub">2</span></h3></div>
+									<img src="img/teams_member_img_04.png" class="iepngfix member" alt="チームメンバー" width="400" height="300" />
+									<div class="member_name">
+										<span>Tsuyoshi Oono</span><br /><span>Shun Oota</span>
+									</div>
+									<div id="team_robot_04">
+										<img src="img/teams_robot_img_04.jpg" />
+									</div>
+								</li>
+								<li id="team05">
+									<div class="team_name"><h3><span class="small">Heiter<br />/FelsGarten</span></h3></div>
+									<img src="img/teams_member_img_05.png" class="iepngfix member" alt="チームメンバー" width="400" height="300" />
+									<div class="member_name">
+										<span>Reiya Hironiwa</span><br /><span>Hasumi Iwabuchi</span>
+									</div>
+									<div id="team_robot_05">
+										<img src="img/teams_robot_img_05.jpg" />
+									</div>
+								</li>
+								<li id="team06">
+									<div class="team_name"><h3>Legorian</h3></div>
+									<img src="img/teams_member_img_06.png" class="iepngfix member" alt="チームメンバー" width="400" height="300" />
+									<div class="member_name">
+										<span>Naoyuki Hara</span><br /><span>Takahiro Kubo</span>
+									</div>
+									<div id="team_robot_06">
+										<img src="img/teams_robot_img_06.jpg" />
+									</div>
+								</li>
+								<li id="team07">
+									<div class="team_name"><h3>R2D2</h3></div>
+									<img src="img/teams_member_img_07.png" class="iepngfix member" alt="チームメンバー" width="400" height="300" />
+									<div class="member_name">
+										<span>Ludmil Barzev</span>　&nbsp;
+										<span>Stanka Zareva</span><br />
+										<span>Vasil Penov</span>　&nbsp;
+										<span>Vladislav Viktorov</span><br />
+										<span>Martin Filipov</span>　&nbsp;
+										<span>Radoslav Parvanov</span><br />
+									</div>
+									<div id="team_robot_07">
+										<img src="img/teams_robot_img_07.jpg">
+									</div>
+								</li>
+								<li id="team08">
+									<div class="team_name"><h3>Zombaio</h3></div>
+									<img src="img/teams_member_img_08.png" class="iepngfix member" alt="チームメンバー" width="400" height="300" />
+									<div class="member_name">
+										<span>Miroslav Dimitrov</span>　&nbsp;
+										<span>Mariana Stankova</span><br />
+										<span>Emanuil Geogriev</span>　&nbsp;
+										<span>Veselina Todorova</span><br />
+										<span>Vasil Valchev</span>
+									</div>
+									<div id="team_robot_08">
+										<img src="img/teams_robot_img_08.jpg">
+									</div>
+									<div class="medal">
+										<img src="img/teams_medal_02.png" width="200" height="200" />
+									</div>
+								</li>
+								<li id="team09">
+									<div class="team_name"><h3>Hyperspace</h3></div>
+									<img src="img/teams_member_img_09.png" class="iepngfix member" alt="チームメンバー" width="400" height="300" />
+									<div class="member_name">																<span>Andrei Pavlov</span>　&nbsp;
+										<span>Atanas Arsov</span><br />
+										<span>Aleksandar Markov</span>　&nbsp;
+										<span>Ivailo Simeonov</span><br />
+										<span>Mihail Dimitrov</span>
+									</div>
+									<div id="team_robot_09">
+										<img src="img/teams_robot_img_09.jpg">
+									</div>
+								</li>
+								<li id="team10">
+									<div class="team_name"><h3>SHH neznam</h3></div>
+									<img src="img/teams_member_img_10.png" class="iepngfix member" alt="チームメンバー" width="400" height="300" />
+									<div class="member_name">
+										<span>Viktoria Mateeva</span>　&nbsp;
+										<span>Rosalina Dimitrova</span><br />
+										<span>Katia Kirova</span>　&nbsp;
+										<span>Cvetomir Stoianov</span><br />
+										<span>Ognian Petorv</span>
+									</div>
+									<div id="team_robot_10">
+										<img src="img/teams_robot_img_10.jpg">
+									</div>
+								</li>
+							</ul>
+							<br class="clear_float" />
+        				</div>
+				</div><!-- end #main_content -->
+				
+			</div><!-- end #container -->
+	
+			<br class="clear_float" />
+			
+			<div id="footer">
+				<span>Copyright &copy; 2007- Robotic Life Support Laboratory. All Rights Reserved.</span>
+			</div><!-- end #footer -->
+			
+		</div><!-- end #wrapper -->
+	</body>
+</html>

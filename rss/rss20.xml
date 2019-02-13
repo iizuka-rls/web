@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<rss version="2.0">
+	<channel>
+
+		<title>東京都市大学 RLS研究室 RSSフィード</title>
+		<link>http://www.rls.mse.tcu.ac.jp/robotics/</link>
+		<description>東京都市大学RLS研究室RSSフィード</description>
+		<lastBuildDate>Tsu, 20 Sep 2011 05:05:00 +0900</lastBuildDate>
+
+		<item>
+			<title>Papers[IROS追加]</title>
+			<link>http://www.rls.mse.tcu.ac.jp/robotics/papers.html#2</link>
+			<category>追加情報</category>
+			<description><![CDATA[IROSの発表資料追加]]></description>
+			<pubDate>Mon, 03 Oct 2011 11:40:00 +0900</pubDate>
+		</item>
+
+		<item>
+			<title>Newsを更新</title>
+			<link>http://www.rls.mse.tcu.ac.jp/robotics/index.html#5</link>
+			<category>更新情報</category>
+			<description><![CDATA[SICEについて]]></description>
+			<pubDate>Tsu, 20 Sep 2011 05:05:00 +0900</pubDate>
+		</item>
+
+		<item>
+			<title>Papers[SICE追加]</title>
+			<link>http://www.rls.mse.tcu.ac.jp/robotics/papers.html#1</link>
+			<category>追加情報</category>
+			<description><![CDATA[SICEの発表資料追加]]></description>
+			<pubDate>Tsu, 20 Sep 2011 05:05:00 +0900</pubDate>
+		</item>
+
+		<item>
+			<title>Newsを更新</title>
+			<link>http://www.rls.mse.tcu.ac.jp/robotics/index.html#4</link>
+			<category>更新情報</category>
+			<description><![CDATA[配属希望者の面談について]]></description>
+			<pubDate>Tsu, 20 Sep 2011 03:00:00 +0900</pubDate>
+		</item>
+
+		<item>
+			<title>RLS研究室配属希望者へ</title>
+			<link>http://www.rls.mse.tcu.ac.jp/robotics/introduction/announcement/announcement11.html</link>
+			<category>面談のお知らせ</category>
+			<description><![CDATA[配属希望者は今週末までに教員と面談を]]></description>
+			<pubDate>Tsu, 20 Sep 2011 03:00:00 +0900</pubDate>
+		</item>
+
+		<item>
+			<title>Newsを更新</title>
+			<link>http://www.rls.mse.tcu.ac.jp/robotics/index.html#3</link>
+			<category>更新情報</category>
+			<description><![CDATA[RSJについて]]></description>
+			<pubDate>Mon, 12 Sep 2011 02:33:00 +0900</pubDate>
+		</item>
+
+		<item>
+			<title>Papers[RSJ追加]</title>
+			<link>http://www.rls.mse.tcu.ac.jp/robotics/papers.html</link>
+			<category>追加情報</category>
+			<description><![CDATA[RSJの発表資料追加]]></description>
+			<pubDate>Mon, 12 Sep 2011 02:33:00 +0900</pubDate>
+		</item>
+
+		<item>
+			<title>Newsを更新</title>
+			<link>http://www.rls.mse.tcu.ac.jp/robotics/index.html#2</link>
+			<category>更新情報</category>
+			<description><![CDATA[修士論文 中間発表会について]]></description>
+			<pubDate>Tsu, 23 Aug 2011 07:37:00 +0900</pubDate>
+		</item>
+
+		<item>
+			<title>Newsを更新</title>
+			<link>http://www.rls.mse.tcu.ac.jp/robotics/index.html#1</link>
+			<category>更新情報</category>
+			<description><![CDATA[科学体験教室を開きます。]]></description>
+			<pubDate>Fri, 29 Jul 2011 13:30:00 +0900</pubDate>
+		</item>
+
+		<item>
+			<title>Newsを更新</title>
+			<link>http://www.rls.mse.tcu.ac.jp/robotics/index.html</link>
+			<category>更新情報</category>
+			<description><![CDATA[RLS研究室への配属希望者用ページを作成しました。]]></description>
+			<pubDate>Thu, 14 Jul 2011 20:14:00 +0900</pubDate>
+		</item>
+
+	</channel>
+</rss>
